@@ -38,11 +38,13 @@ Esta guía lleva paso a paso desde clonar el repositorio hasta ver el pipeline e
 
 ## 2. Obtener el repositorio
 
+Repositorio público: **https://github.com/Juanda-arh/hris-cicd** (ramas `main` y `develop`).
+
 Elige **una** de las dos opciones.
 
 ### Opción A — Fork (recomendada para evaluar)
 
-1. En la página del repositorio, pulsa **Fork**.
+1. En https://github.com/Juanda-arh/hris-cicd pulsa **Fork**.
 2. **Desmarca** *Copy the `main` branch only* para que el fork incluya también la rama `develop`.
 3. En el fork, abre la pestaña **Actions**. GitHub deshabilita los workflows en los forks: pulsa **I understand my workflows, go ahead and enable them**.
 4. Clona tu fork:
@@ -59,7 +61,7 @@ Elige **una** de las dos opciones.
 ### Opción B — Repositorio nuevo propio
 
 ```bash
-git clone https://github.com/<owner-original>/<repo>.git hris
+git clone https://github.com/Juanda-arh/hris-cicd.git hris
 cd hris
 git remote remove origin
 
@@ -373,6 +375,21 @@ git commit -am "chore: variable sin usar" && git push
 
 Falla el paso *Validar código (ESLint)* con `'sinUso' is assigned a value but never used  no-unused-vars` y las pruebas ni siquiera se ejecutan. Revierte con `git revert HEAD`.
 
+### Variante sin tocar `develop` ni `main`: rama propia + *Run workflow*
+
+El `push` solo dispara el pipeline en `main` y `develop`, pero el workflow también tiene `workflow_dispatch`, que se puede lanzar sobre **cualquier rama**. Así se rompe una prueba sin ensuciar las ramas principales:
+
+```bash
+git checkout develop && git pull
+git checkout -b demo/prueba-fallida
+sed -i "s/'2027-03-05')).toBe(5)/'2027-03-05')).toBe(4)/" backend/tests/unit/PU-09.diasVacaciones.test.js
+git commit -am "test: romper PU-09 a propósito" && git push -u origin demo/prueba-fallida
+gh workflow run ci-cd.yml --ref demo/prueba-fallida     # o: Actions → Pipeline CI/CD HRIS → Run workflow → Branch: demo/prueba-fallida
+gh run watch                                             # elige la ejecución recién creada
+```
+
+El resultado es el mismo de E2: *Build & Unit Tests* en rojo y los otros dos jobs en *skipped*. Se puede editar cualquier otra prueba del mismo modo (cambiar el valor de un `toBe(...)`, `toBe(true)` → `toBe(false)`, etc.).
+
 Todos estos escenarios se pueden comprobar primero en local: `cd backend && npm run lint && npm run test:ci; echo "exit=$?"` termina con `exit=1`.
 
 ---
@@ -487,4 +504,5 @@ Alternativas desde GitHub: *Re-run all jobs* sobre la ejecución del último com
 | Despliegue sin servidor | Si el environment no tiene `SSH_HOST`, el job *Deploy* despliega en el propio runner y ejecuta la prueba de humo, para que el pipeline completo se pueda evaluar sin infraestructura. |
 | Prueba de humo y datos | `smoke-test.sh` crea un empleado de prueba en CN-08 (con documento y correo únicos por ejecución). Contra un servidor real usa `SMOKE_READONLY=1`. |
 | Cobertura | Se mantienen las rutas del documento (`services`, `utils` y `middlewares` en `collectCoverageFrom`); el umbral aplica a `services` y `utils`, medido por carpeta. |
+| Versiones de las acciones | El PDF usa `actions/checkout@v4`, `setup-node@v4`, `upload-artifact@v4` y `docker/*@v3/v5/v6`. Esas versiones corren en Node 20, que GitHub marcó como obsoleto en los runners, así que se usan las versiones mayores actuales (`@v7` en `actions/*`, `@v4/v6/v7` en `docker/*`), con los mismos pasos y parámetros. El runtime de la **aplicación** sigue siendo Node 20 (`NODE_VERSION`). |
 | Script `dev` | `node --watch src/server.js` en lugar de `nodemon` (Node 20 lo trae integrado; una dependencia menos). |

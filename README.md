@@ -1,5 +1,9 @@
 # HRIS · Portal de Autoservicio para Empleados — Backend + Pipeline CI/CD
 
+[![Pipeline CI/CD HRIS](https://github.com/Juanda-arh/hris-cicd/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/Juanda-arh/hris-cicd/actions/workflows/ci-cd.yml)
+
+**Repositorio:** https://github.com/Juanda-arh/hris-cicd · **Ejecuciones:** [Actions](https://github.com/Juanda-arh/hris-cicd/actions) · **Integrantes:** Hugo Alejandro Solorza, Juan David Buitrago
+
 Backend (API REST en Node.js 20 + Express + PostgreSQL) del **Portal de Autoservicio para Empleados (HRIS) de M&S Mechanical LLC** y su pipeline de **GitHub Actions**, construidos a partir de:
 
 - el **Plan de Pruebas del HRIS** (casos de caja negra CN-01 a CN-20 y pruebas unitarias PU-01 a PU-15), y
@@ -9,6 +13,7 @@ Cada push a `main` o `develop` ejecuta ESLint y las 15 pruebas unitarias con Jes
 
 > 📘 **Para ejecutarlo paso a paso, sigue [`GUIA_INSTALACION.md`](GUIA_INSTALACION.md).**
 > 🎬 Guion de la demostración en video: [`docs/GUION_VIDEO.md`](docs/GUION_VIDEO.md).
+> 📦 Datos de la entrega (links y comentario): [`ENTREGA.md`](ENTREGA.md).
 
 ---
 
