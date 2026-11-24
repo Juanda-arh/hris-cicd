@@ -1,0 +1,12 @@
+# La imagen no lleva pruebas, reportes ni secretos
+node_modules
+coverage
+tests
+.env
+.env.*
+npm-debug.log*
+Dockerfile
+.dockerignore
+eslint.config.js
+jest.config.js
+scripts/ci-summary.js

@@ -1,0 +1,45 @@
+# Ambiente LOCAL de pruebas: construye el backend desde ./backend.
+#   docker compose up -d --build
+#   docker compose down -v      (borra la base de datos y vuelve a cargar init.sql en el siguiente up)
+# Funciona sin .env (usa los valores por defecto de abajo); si existe un .env, sus valores tienen prioridad.
+
+name: hris
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-hris}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hris_local_password}
+      POSTGRES_DB: ${POSTGRES_DB:-hris}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    # Sin puerto publicado para no chocar con un PostgreSQL local; consola: docker compose exec db psql -U hris
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./backend
+    image: hris-backend:local
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-hris}:${POSTGRES_PASSWORD:-hris_local_password}@db:5432/${POSTGRES_DB:-hris}
+      JWT_SECRET: ${JWT_SECRET:-local-dev-jwt-secret-change-me}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-1h}
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 3000
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${API_PORT:-3000}:3000"
+    restart: unless-stopped
+
+volumes:
+  pgdata:

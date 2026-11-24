@@ -1,0 +1,39 @@
+# Ambiente de SERVIDOR (staging / producción). El backend no se construye: se descarga de GHCR.
+# Estructura esperada en el servidor (/opt/hris) o en el runner ($RUNNER_TEMP/hris):
+#   docker-compose.yml   <- este archivo
+#   db/init.sql
+#   .env                 <- creado a partir de .env.example (secretos reales)
+# Variables:
+#   HRIS_IMAGE  ghcr.io/<owner-en-minusculas>/hris-backend   (obligatoria)
+#   IMAGE_TAG   etiqueta a desplegar: sha-xxxxxxx, develop, main o latest (por defecto latest)
+# Rollback: IMAGE_TAG=$(cat .previous_tag) docker compose up -d api
+# Nunca usar "docker compose down -v" en el servidor: borraría la base de datos.
+
+name: hris
+
+services:
+  db:
+    image: postgres:16-alpine
+    env_file: .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    image: ${HRIS_IMAGE:?Set HRIS_IMAGE, e.g. ghcr.io/owner/hris-backend}:${IMAGE_TAG:-latest}
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  pgdata:

@@ -1,0 +1,482 @@
+import { useEffect, useMemo, useState } from 'react';
+import {
+  approveCertificate,
+  downloadCertificateToSign,
+  listCertificateRequests,
+  rejectCertificate,
+} from '../api/certificatesApi';
+import { listEmployees } from '../api/employeesApi';
+import { saveFile } from '../api/files';
+import { PageHeader } from '../components/AppLayout';
+import { ErrorIcon } from '../components/FormField';
+import Modal from '../components/Modal';
+import { getErrorMessage } from '../utils/errors';
+import { formatId, formatMoney, formatTimestamp, initials } from '../utils/people';
+import './NewEmployeePage.css';
+import './EmployeeProfilePage.css';
+import './EmployeeTabs.css';
+import './PeoplePage.css';
+import './CertificatesPage.css';
+
+const PAGE_SIZE = 10;
+const MAX_PDF_MB = 5;
+const MAX_REASON = 255;
+
+const FILTERS = [
+  { value: 'Pendiente', label: 'Pending' },
+  { value: 'Aprobado', label: 'Approved' },
+  { value: 'Rechazado', label: 'Rejected' },
+  { value: 'Cancelado', label: 'Cancelled' },
+  { value: 'all', label: 'All' },
+];
+
+const STATUS_LABELS = { Pendiente: 'Pending', Aprobado: 'Approved', Rechazado: 'Rejected', Cancelado: 'Cancelled' };
+
+function formatSize(bytes) {
+  if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function validatePdf(file) {
+  const looksLikePdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+  if (!looksLikePdf) return 'The file must be a PDF';
+  if (file.size > MAX_PDF_MB * 1024 * 1024) return `The file must be at most ${MAX_PDF_MB} MB`;
+  return '';
+}
+
+function StatusBadge({ status }) {
+  return <span className={`cert-status cert-status--${status.toLowerCase()}`}>{STATUS_LABELS[status] || status}</span>;
+}
+
+function DownloadIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3v12M7 10l5 5 5-5M4.5 20.5h15" />
+    </svg>
+  );
+}
+
+function PersonCard({ request, extra }) {
+  return (
+    <div className="person-card">
+      <span className="person-card__photo" aria-hidden="true">{initials(request.nombre)}</span>
+      <span className="person-card__text">
+        <strong>{request.nombre}</strong>
+        <span>Requested {formatTimestamp(request.fecha_solicitud)}{extra ? ` · ${extra}` : ''}</span>
+      </span>
+      <StatusBadge status={request.estado} />
+    </div>
+  );
+}
+
+function ApproveModal({ request, onClose, onDone }) {
+  const replacing = request.estado === 'Aprobado';
+  const [downloaded, setDownloaded] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [file, setFile] = useState(null);
+  const [fileError, setFileError] = useState('');
+  const [dragging, setDragging] = useState(false);
+  const [error, setError] = useState('');
+  const [saving, setSaving] = useState(false);
+  
+  async function handleDownload() {
+    setDownloading(true);
+    setError('');
+    try {
+      saveFile(await downloadCertificateToSign(request.id));
+      setDownloaded(true);
+    } catch (err) {
+      setError(getErrorMessage(err));
+    } finally {
+      setDownloading(false);
+    }
+  }
+
+  function pick(candidate) {
+    if (!candidate) return;
+    const problem = validatePdf(candidate);
+    setFileError(problem);
+    if (!problem) setFile(candidate);
+  }
+
+  async function handleApprove() {
+    setSaving(true);
+    setError('');
+    try {
+      await approveCertificate(request.id, file);
+      onDone(replacing
+        ? `The signed certificate of ${request.nombre} was replaced and sent again.`
+        : `The certificate of ${request.nombre} was approved and sent.`);
+    } catch (err) {
+      setError(getErrorMessage(err));
+      setSaving(false);
+    }
+  }
+
+  return (
+    <Modal
+      title={replacing ? 'Replace signed certificate' : 'Approve certificate'}
+      eyebrow={`${request.nombre} · Requested ${formatTimestamp(request.fecha_solicitud)}`}
+      onClose={onClose}
+      footer={(
+        <>
+          <button type="button" className="btn" disabled={saving} onClick={onClose}>Cancel</button>
+          <button type="button" className="btn btn--dark" disabled={!file || saving} onClick={handleApprove}>
+            {saving ? 'Sending…' : replacing ? 'Replace and send' : 'Approve and send'}
+          </button>
+        </>
+      )}
+    >
+      {error && <p className="profile__alert" role="alert">{error}</p>}
+
+      <ol className="cert-steps">
+        <li className={downloaded ? 'is-done' : 'is-current'}>
+          <span className="cert-steps__box" aria-hidden="true">{downloaded ? '✓' : '1'}</span>
+          <div className="cert-steps__body cert-steps__body--row">
+            <div>
+              <strong>Download the certificate</strong>
+              <span>{downloaded ? 'Downloaded' : 'The PDF generated by the system, not signed yet.'}</span>
+            </div>
+            <button type="button" className="btn btn--small" disabled={downloading} onClick={handleDownload}>
+              <DownloadIcon /> {downloading ? 'Downloading…' : downloaded ? 'Download again' : 'Download'}
+            </button>
+          </div>
+        </li>
+        <li className={file ? 'is-done' : ''}>
+          <span className="cert-steps__box" aria-hidden="true">{file ? '✓' : '2'}</span>
+          <div className="cert-steps__body">
+            <strong>Sign it</strong>
+            <span>With your digital or scanned signature, outside the portal.</span>
+          </div>
+        </li>
+        <li className={file ? 'is-current' : ''}>
+          <span className="cert-steps__box" aria-hidden="true">3</span>
+          <div className="cert-steps__body">
+            <strong>Upload the signed PDF</strong>
+            <span>PDF only, up to {MAX_PDF_MB} MB.</span>
+
+            <label
+              className={`cert-drop${dragging ? ' is-dragging' : ''}`}
+              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+              onDragLeave={() => setDragging(false)}
+              onDrop={(e) => {
+                e.preventDefault();
+                setDragging(false);
+                pick(e.dataTransfer.files[0]);
+              }}
+            >
+              <input
+                type="file"
+                accept="application/pdf,.pdf"
+                className="sr-only"
+                onChange={(e) => {
+                  pick(e.target.files[0]);
+                  e.target.value = '';
+                }}
+              />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 16V4M7 9l5-5 5 5M4.5 20.5h15" />
+              </svg>
+              <span>Drag the PDF here or choose it from your computer</span>
+            </label>
+            {fileError && <p className="form-field__error"><ErrorIcon />{fileError}</p>}
+
+            {file && (
+              <div className="cert-file">
+                <span className="cert-file__icon" aria-hidden="true">PDF</span>
+                <span className="cert-file__text">
+                  <strong>{file.name}</strong>
+                  <span>{formatSize(file.size)} · Ready to send</span>
+                </span>
+                <button type="button" className="icon-button" aria-label="Remove file" onClick={() => setFile(null)}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M4 7h16M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13" />
+                  </svg>
+                </button>
+              </div>
+            )}
+          </div>
+        </li>
+      </ol>
+
+      <p className="note cert-note">
+        {replacing
+          ? `The previous file is replaced, and ${request.nombre} receives the new one by email.`
+          : `When you approve, ${request.nombre} receives the signed certificate by email and can download it from the portal.`}
+      </p>
+    </Modal>
+  );
+}
+
+function RejectModal({ request, details, onClose, onDone }) {
+  const [reason, setReason] = useState('');
+  const [fieldError, setFieldError] = useState('');
+  const [error, setError] = useState('');
+  const [saving, setSaving] = useState(false);
+
+  async function handleReject() {
+    if (!reason.trim()) {
+      setFieldError('Enter the reason for the rejection');
+      return;
+    }
+    setSaving(true);
+    setError('');
+    try {
+      await rejectCertificate(request.id, reason.trim());
+      onDone(`The request of ${request.nombre} was rejected.`);
+    } catch (err) {
+      setError(getErrorMessage(err));
+      setSaving(false);
+    }
+  }
+
+  return (
+    <Modal
+      title="Reject request?"
+      subtitle="The request is rejected, and the employee can send a new one."
+      onClose={onClose}
+      footer={(
+        <>
+          <button type="button" className="btn" disabled={saving} onClick={onClose}>Cancel</button>
+          <button type="button" className="btn btn--orange" disabled={saving} onClick={handleReject}>
+            {saving ? 'Rejecting…' : 'Reject request'}
+          </button>
+        </>
+      )}
+    >
+      <div className="modal-form">
+        {error && <p className="profile__alert" role="alert">{error}</p>}
+        <PersonCard request={request} extra={details} />
+        <div className={`form-field${fieldError ? ' has-error' : ''}`}>
+          <div className="cert-reason-head">
+            <label htmlFor="reject-reason">Rejection reason <span className="form-field__required" aria-hidden="true">*</span></label>
+            <span className="char-count" aria-hidden="true">{reason.length} / {MAX_REASON}</span>
+          </div>
+          <textarea
+            id="reject-reason"
+            rows={3}
+            maxLength={MAX_REASON}
+            value={reason}
+            aria-invalid={Boolean(fieldError)}
+            aria-describedby={fieldError ? 'reject-reason-error' : 'reject-reason-hint'}
+            onChange={(e) => {
+              setReason(e.target.value);
+              setFieldError('');
+            }}
+          />
+          {fieldError
+            ? <p id="reject-reason-error" className="form-field__error"><ErrorIcon />{fieldError}</p>
+            : <p id="reject-reason-hint" className="form-field__hint">Write it for the employee: they will read it exactly as you wrote it.</p>}
+        </div>
+        <p className="note">The employee receives the reason by email and in their portal notifications.</p>
+      </div>
+    </Modal>
+  );
+}
+
+export default function CertificatesPage() {
+  const [requests, setRequests] = useState(null);
+  const [employees, setEmployees] = useState(new Map());
+  const [loadError, setLoadError] = useState('');
+  const [version, setVersion] = useState(0);
+  const [filter, setFilter] = useState('Pendiente');
+  const [page, setPage] = useState(1);
+  const [modal, setModal] = useState(null);
+  const [toast, setToast] = useState('');
+  const [rowError, setRowError] = useState('');
+  const [downloadingId, setDownloadingId] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    listCertificateRequests()
+      .then((data) => {
+        if (!active) return;
+        setRequests(data);
+        setLoadError('');
+      })
+      .catch((err) => { if (active) setLoadError(getErrorMessage(err)); });
+    // Secondary data: without it the list still works and shows a dash
+    listEmployees()
+      .then((data) => { if (active) setEmployees(new Map(data.map((item) => [item.id, item]))); })
+      .catch(() => {});
+    return () => { active = false; };
+  }, [version]);
+
+  const counts = useMemo(() => {
+    const result = { all: requests?.length || 0 };
+    (requests || []).forEach((request) => {
+      result[request.estado] = (result[request.estado] || 0) + 1;
+    });
+    return result;
+  }, [requests]);
+
+  const filtered = useMemo(
+    () => (requests || []).filter((request) => filter === 'all' || request.estado === filter),
+    [requests, filter]
+  );
+
+  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, pageCount);
+  const firstIndex = (currentPage - 1) * PAGE_SIZE;
+  const rows = filtered.slice(firstIndex, firstIndex + PAGE_SIZE);
+
+  function currentDetails(request) {
+    const employee = employees.get(request.empleado_id);
+    if (!employee?.cargo) return '';
+    return `${employee.cargo} · ${formatMoney(employee.sueldo)} USD`;
+  }
+
+  async function handleDownload(request) {
+    setDownloadingId(request.id);
+    setRowError('');
+    try {
+      saveFile(await downloadCertificateToSign(request.id));
+    } catch (err) {
+      setRowError(getErrorMessage(err));
+    } finally {
+      setDownloadingId(null);
+    }
+  }
+
+  function finished(message) {
+    setModal(null);
+    setRowError('');
+    setToast(message);
+    setVersion((value) => value + 1);
+  }
+
+  return (
+    <>
+      <PageHeader crumbs={[{ label: 'Certificates' }]} />
+
+      {toast && (
+        <div className="toast" role="status">
+          <span>{toast}</span>
+          <button type="button" aria-label="Dismiss message" onClick={() => setToast('')}>×</button>
+        </div>
+      )}
+
+      <main className="app__content certificates">
+        <h1 className="new-employee__title">Certificate requests</h1>
+        <p className="new-employee__subtitle">
+          Download the PDF, sign it and upload it to approve. Each request also reaches you by email with the PDF attached.
+        </p>
+
+        <div className="cert-filters" role="tablist" aria-label="Filter by status">
+          {FILTERS.map((item) => (
+            <button
+              key={item.value}
+              type="button"
+              role="tab"
+              aria-selected={filter === item.value}
+              className={`cert-filter${filter === item.value ? ' is-active' : ''}`}
+              onClick={() => {
+                setFilter(item.value);
+                setPage(1);
+                setRowError('');
+              }}
+            >
+              {item.label}
+              {item.value === 'Pendiente' && counts.Pendiente > 0 && <span className="cert-filter__count">{counts.Pendiente}</span>}
+            </button>
+          ))}
+        </div>
+
+        {(loadError || rowError) && <p className="profile__alert" role="alert">{loadError || rowError}</p>}
+        {!loadError && !requests && <p className="tab-empty" role="status">Loading requests…</p>}
+        {requests && rows.length === 0 && (
+          <p className="tab-empty">
+            {filter === 'all' ? 'There are no certificate requests yet.' : `There are no ${FILTERS.find((item) => item.value === filter).label.toLowerCase()} requests.`}
+          </p>
+        )}
+
+        {rows.length > 0 && (
+          <table className="cert-table">
+            <thead>
+              <tr>
+                <th scope="col">Employee</th>
+                <th scope="col">Requested</th>
+                <th scope="col">Current position</th>
+                <th scope="col">Status</th>
+                <th scope="col" className="align-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((request) => (
+                <tr key={request.id}>
+                  <td className="cert-table__employee">
+                    <span className="person-card__photo" aria-hidden="true">{initials(request.nombre)}</span>
+                    <span className="person-card__text">
+                      <strong>{request.nombre}</strong>
+                      <span className="cert-id">ID {formatId(request.cedula)}</span>
+                    </span>
+                  </td>
+                  <td className="cert-table__date">{formatTimestamp(request.fecha_solicitud)}</td>
+                  <td className="cert-table__details">{currentDetails(request) || '—'}</td>
+                  <td className="cert-table__status">
+                    <StatusBadge status={request.estado} />
+                    {request.estado !== 'Pendiente' && request.fecha_respuesta && (
+                      <span className="cert-table__answered">{formatTimestamp(request.fecha_respuesta)}</span>
+                    )}
+                    {request.motivo_rechazo && <span className="cert-table__reason">{request.motivo_rechazo}</span>}
+                  </td>
+                  <td className="cert-table__actions">
+                    {['Pendiente', 'Aprobado'].includes(request.estado) && (
+                      <button
+                        type="button"
+                        className="icon-button"
+                        aria-label={`Download PDF to sign for ${request.nombre}`}
+                        title="PDF to sign"
+                        disabled={downloadingId === request.id}
+                        onClick={() => handleDownload(request)}
+                      >
+                        <DownloadIcon />
+                      </button>
+                    )}
+                    {request.estado === 'Pendiente' && (
+                      <>
+                        <button type="button" className="btn btn--small" onClick={() => setModal({ type: 'reject', request })}>Reject</button>
+                        <button type="button" className="btn btn--small btn--dark" onClick={() => setModal({ type: 'approve', request })}>Approve</button>
+                      </>
+                    )}
+                    {request.estado === 'Aprobado' && (
+                      <button type="button" className="btn btn--small" onClick={() => setModal({ type: 'approve', request })}>Replace file</button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+
+        {rows.length > 0 && (
+          <div className="people__footer">
+            <span>Showing {firstIndex + 1}–{firstIndex + rows.length} of {filtered.length}</span>
+            <span className="people__pager">
+              <button type="button" aria-label="Previous page" disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)}>‹</button>
+              <span>{currentPage} / {pageCount}</span>
+              <button type="button" aria-label="Next page" disabled={currentPage === pageCount} onClick={() => setPage(currentPage + 1)}>›</button>
+            </span>
+          </div>
+        )}
+
+        <p className="tab-footnote cert-footnote">
+          <span className="cert-footnote__icon"><DownloadIcon /></span>
+          PDF to sign. An approved request can be uploaded again to correct the file; it is sent to the employee again.
+        </p>
+      </main>
+
+      {modal?.type === 'approve' && (
+        <ApproveModal request={modal.request} onClose={() => setModal(null)} onDone={finished} />
+      )}
+      {modal?.type === 'reject' && (
+        <RejectModal
+          request={modal.request}
+          details={currentDetails(modal.request)}
+          onClose={() => setModal(null)}
+          onDone={finished}
+        />
+      )}
+    </>
+  );
+}

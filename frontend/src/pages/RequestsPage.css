@@ -1,0 +1,156 @@
+/* Admin requests (vacations and absences). Mobile first: each row is a card; a table from 900px. */
+
+.req-mono { font-family: var(--mono); }
+
+/* ---------- Stats: coloured mark on top of each one ---------- */
+.req-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.req-stats > div { padding: 16px 12px 16px 0; }
+.req-stats > div:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+.req-stats > div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+.req-stats > div::before { content: ''; display: block; width: 28px; height: 3px; margin-bottom: 14px; background: #cfccc0; }
+.req-stats--pending::before { background: #f7e83a !important; }
+.req-stats--approved::before { background: #cfeec6 !important; }
+.req-stats--rejected::before { background: var(--orange) !important; }
+.req-stats dt { min-height: 26px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; line-height: 1.3; text-transform: uppercase; color: var(--muted); }
+.req-stats dd { margin: 4px 0 0; font-size: 34px; font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+
+/* ---------- Filters (inputs styled by PeoplePage.css) ---------- */
+.req-filters label:not(.people__search) { flex: 1 1 calc(50% - 4px); }
+
+/* ---------- Status ---------- */
+.req-status { display: inline-block; padding: 2px 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; color: var(--ink); background: #f7e83a; border: 1px solid var(--ink); }
+.req-status--aprobado { color: #1f5a37; background: #e3f1e7; border-color: #a9d2b5; }
+.req-status--rechazado { color: var(--error); background: var(--orange-soft); border-color: #f4a58c; }
+.req-status--cancelado { color: #4a4a44; background: #e9e7de; border-color: #cfccc0; }
+
+.req-flag { display: inline-block; margin-left: 8px; padding: 1px 6px; font-size: 10px; color: var(--muted); border: 1px dashed var(--field-line); white-space: nowrap; }
+
+.req-link { padding: 4px; font: inherit; font-size: 14px; font-weight: 500; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; background: none; border: 0; cursor: pointer; }
+.req-link:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+/* ---------- List: cards on mobile ---------- */
+.req-table { width: 100%; border-collapse: collapse; }
+.req-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.req-table tbody, .req-table td { display: block; }
+.req-table tr {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px 0;
+  padding: 16px 0 16px 32px;
+  border-top: 1px solid var(--line);
+}
+.req-table tr.is-selected { background: var(--highlight); }
+.req-table__check { position: absolute; top: 18px; left: 0; }
+.req-table__check input { width: 18px; height: 18px; margin: 0; accent-color: #000; }
+.req-table__employee { flex: 1 1 calc(100% - 110px); min-width: 0; order: 0; }
+.req-table__employee strong { display: block; font-size: 15px; font-weight: 400; }
+.req-sub { display: block; margin-top: 2px; font-size: 11px; color: var(--muted); }
+.req-table__status { flex: 0 0 auto; order: 1; }
+/* Type · period · leader flow on one line */
+.req-table__type, .req-table__period, .req-table__leader { order: 2; font-size: 12px; font-weight: 300; color: var(--muted); }
+.req-table__type::after, .req-table__period::after { content: '·'; margin: 0 6px; }
+.req-table__open { order: 3; flex-basis: 100%; }
+.req-table__open .req-link { padding-left: 0; }
+
+/* The toast sits at the bottom here: at the top it would cover the header actions */
+.toast.req-toast { top: auto; bottom: 16px; }
+
+/* ---------- Detail modal ---------- */
+.req-detail { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; margin: 4px 0 0; }
+.req-detail dt { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.req-detail dd { margin: 4px 0 0; font-size: 14px; overflow-wrap: anywhere; }
+.req-detail--wide { grid-column: 1 / -1; }
+.req-detail__note { display: block; margin-top: 4px; font-size: 12px; font-weight: 300; color: var(--muted); }
+.req-doc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.req-doc .req-detail__note { flex-basis: 100%; margin: 0; }
+.req-field-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.req-field-head label { display: block; margin-bottom: 8px; font-size: 13px; }
+.req-field-head .char-count { margin: 0; }
+.req-optional { font-weight: 300; color: var(--muted); }
+.modal__foot .req-foot-left { margin-right: auto; }
+
+.req-bulk-list { margin: 0; padding: 0; list-style: none; max-height: 320px; overflow-y: auto; border-top: 1px solid var(--line); }
+.req-bulk-list li { display: flex; flex-direction: column; gap: 2px; padding: 10px 0; font-size: 13px; border-bottom: 1px solid var(--line); }
+.req-bulk-list strong { font-weight: 500; }
+.req-bulk-list__error { font-size: 12px; color: var(--error); }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .toast.req-toast { left: auto; right: 40px; bottom: 24px; max-width: 480px; }
+  .req-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 28px 0; }
+  .req-stats > div { padding: 22px 16px 22px 0; border-top: 0 !important; }
+  .req-stats > div:nth-child(n + 2) { padding-left: 24px; border-left: 1px solid var(--line); }
+  .req-stats > div:last-child { background: #fff; }
+  .req-stats dd { font-size: 40px; }
+
+  .req-filters { flex-wrap: nowrap; }
+  .req-filters .people__search { flex: 1 1 auto; }
+  .req-filters label:not(.people__search) { flex: 0 0 auto; }
+  .req-filters select { width: auto; }
+
+  .req-table thead { position: static; display: table-header-group; width: auto; height: auto; overflow: visible; clip-path: none; }
+  .req-table tbody { display: table-row-group; }
+  .req-table tr { display: table-row; padding: 0; border-top: 0; border-bottom: 1px solid var(--line); }
+  .req-table td, .req-table th { display: table-cell !important; padding: 14px 12px; vertical-align: middle; }
+  .req-table th { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-align: left; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--line); }
+  .req-table__check { position: static; width: 36px; padding-left: 0 !important; }
+  .req-table__type, .req-table__period, .req-table__leader { font-size: 14px; font-weight: 400; color: var(--ink); }
+  .req-table__period { white-space: nowrap; }
+  .req-table__type::after, .req-table__period::after { content: none; }
+  .req-table__status { text-align: left; }
+  .req-table__open { text-align: right; padding-right: 0 !important; }
+}
+
+/* ---------- Coverage + calendar inside the request modal ---------- */
+.req-cal { margin-top: 4px; padding-top: 18px; border-top: 1px solid var(--line); }
+.req-cal__eyebrow { margin: 0; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.req-cal__facts { margin: 10px 0 20px; }
+.req-cal__facts > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.req-cal__facts > div:first-child { border-top: 1px solid var(--line); }
+.req-cal__facts dt { font-size: 14px; font-weight: 300; }
+.req-cal__facts dd { margin: 0; font-size: 14px; text-align: right; }
+.req-cal__others { align-items: flex-start !important; }
+.req-cal__others ul { margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.req-cal__others li + li { margin-top: 4px; }
+.req-cal__tag { margin-left: 6px; padding: 0 5px; font-size: 10px; background: #f7e83a; border: 1px solid var(--ink); }
+
+.req-cal__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.req-cal__nav { display: inline-flex; gap: 4px; }
+.req-cal__nav button { width: 30px; height: 30px; font: inherit; font-size: 16px; background: #fff; border: 1px solid var(--field-line); cursor: pointer; }
+.req-cal__nav button:disabled { color: #b5b5b0; cursor: not-allowed; }
+.req-cal__error { margin: 0 0 10px; font-size: 13px; color: var(--error); }
+
+/* 7 equal columns with the same gap in both directions: every day is a square that fills its column,
+   so the spacing is even and the weekday letters sit exactly over the centre of each column */
+.req-cal__grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; width: 100%; max-width: 360px; margin: 0 auto; } /* centred in the modal */
+.req-cal__weekday { display: block; width: 100%; padding-bottom: 2px; font-size: 10px; font-weight: 500; line-height: 1; text-align: center; color: var(--muted); }
+.req-cal__day {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  font-family: var(--mono);
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.req-cal__day.is-empty { background: none; border: 0; }
+.req-cal__day.is-off { color: #8a8a84; background: #dedcd3; border-color: #dedcd3; }
+.req-cal__day.is-pendiente { background: #f7e83a; border-color: #d9c900; font-weight: 500; }
+.req-cal__day.is-aprobado { background: #cfeec6; border-color: #9fd18f; font-weight: 500; }
+.req-cal__day.is-rechazado, .req-cal__day.is-cancelado { background: var(--orange-soft); border-color: #f4a58c; text-decoration: line-through; }
+/* A weekend or holiday inside the range does not count as a business day */
+.req-cal__day.is-requested-off { color: #8a8a84; background: #dedcd3; border-color: #dedcd3; font-weight: 400; text-decoration: none; }
+.req-cal__dot { position: absolute; right: 4px; bottom: 4px; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+
+.req-cal__legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 14px 0 0; padding: 0; list-style: none; font-size: 12px; font-weight: 300; }
+.req-cal__legend li { display: inline-flex; align-items: center; gap: 6px; }
+.req-cal__swatch { width: 12px; height: 12px; border: 1px solid var(--ink); background: #fff; }
+.req-cal__swatch.is-pendiente { background: #f7e83a; }
+.req-cal__swatch.is-aprobado { background: #cfeec6; }
+.req-cal__swatch.is-rechazado, .req-cal__swatch.is-cancelado { background: var(--orange-soft); }
+.req-cal__swatch.is-off { background: #dedcd3; border-color: #dedcd3; }
+.req-cal__swatch--dot { width: 8px; height: 8px; background: var(--orange); border: 0; border-radius: 50%; }

@@ -1,0 +1,23 @@
+# Dependencias y reportes
+node_modules/
+coverage/
+dist/
+
+# Secretos: solo se versiona la plantilla
+.env
+.env.*
+!.env.example
+
+# Logs y sistema
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# act (ejecución local del workflow)
+.secrets
+.artifacts/

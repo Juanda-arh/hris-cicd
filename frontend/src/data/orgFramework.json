@@ -1,0 +1,4454 @@
+{
+  "title": "Organization & Leveling Framework",
+  "subtitle": "M&S Mechanical / Soluciones BIM · 2027 target operating model",
+  "brands": [
+    {
+      "word": "Claro.",
+      "line": "VDC Lab"
+    },
+    {
+      "word": "Preciso.",
+      "line": "MEPHub"
+    },
+    {
+      "word": "Posible.",
+      "line": "Permit My House"
+    }
+  ],
+  "status": "Draft v5",
+  "statusNote": "For leadership approval · Aug 2026 · HR",
+  "footer": "MS Systems · Organization & Leveling Framework 2027 (DRAFT v1) — prepared by HR for leadership approval. Line accent colours for VDC Lab and Permit My House are placeholders pending each line's brand kit. Not legal or tax advice; jurisdiction-specific items flagged for local counsel.",
+  "seniority": {
+    "heading": "Seniority & leveling model",
+    "intro": "One ladder across every discipline and line, so a \"Senior\" in VDC Lab, MEPHub or Permit My House means the same thing. Level = how much experience/autonomy a person has. Role = what they are accountable for. The two are separate on purpose — that is what fixes the old \"PM means both a rank and a job\" confusion.",
+    "levels": [
+      {
+        "code": "EXEC",
+        "name": "Executive",
+        "kind": "CEO · GM/COO",
+        "fields": [
+          [
+            "SCOPE",
+            "Company strategy, capital, cross-line priorities."
+          ],
+          [
+            "AUTONOMY",
+            "Sets direction for the whole company."
+          ],
+          [
+            "PEOPLE",
+            "Leads directors and the leadership team."
+          ],
+          [
+            "ENGLISH",
+            "Full professional fluency."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "CEO, General Manager / COO."
+          ]
+        ]
+      },
+      {
+        "code": "L6",
+        "name": "Director",
+        "kind": "LINE & FUNCTION HEADS",
+        "fields": [
+          [
+            "SCOPE",
+            "Owns a whole service line or major shared function."
+          ],
+          [
+            "AUTONOMY",
+            "Accountable for outcomes, growth & P&L-style performance of their domain."
+          ],
+          [
+            "PEOPLE",
+            "Leads Discipline Managers / managers."
+          ],
+          [
+            "ENGLISH",
+            "Full professional fluency; client & partner facing."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "VDC Lab Director, MEPHub Director, People & Culture Director, PMO Director."
+          ]
+        ]
+      },
+      {
+        "code": "L5",
+        "name": "Manager",
+        "kind": "DISCIPLINE MANAGER · PM · FUNCTIONAL MANAGERS",
+        "fields": [
+          [
+            "SCOPE",
+            "Owns a discipline (Discipline Manager) OR projects (PM) OR a shared function."
+          ],
+          [
+            "AUTONOMY",
+            "Full accountability for a team or a portfolio of work."
+          ],
+          [
+            "PEOPLE",
+            "Manages Leads and producers / drives project teams."
+          ],
+          [
+            "ENGLISH",
+            "Advanced — leads calls, meetings, client comms."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "Mechanical Discipline Manager, Project Manager, Estimating Manager."
+          ]
+        ]
+      },
+      {
+        "code": "L4",
+        "name": "Lead",
+        "kind": "TOP INDIVIDUAL CONTRIBUTOR · ENTRY TO MANAGEMENT FORK",
+        "fields": [
+          [
+            "SCOPE",
+            "Technical authority for a discipline pod."
+          ],
+          [
+            "AUTONOMY",
+            "Sets & enforces technical standards; reviews others’ work."
+          ],
+          [
+            "PEOPLE",
+            "Mentors the pod; may or may not have formal reports."
+          ],
+          [
+            "ENGLISH",
+            "Advanced."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "Mechanical Drafting Lead, Lead Electrical Engineer, Training Lead."
+          ]
+        ]
+      },
+      {
+        "code": "L3",
+        "name": "Senior",
+        "kind": "INDEPENDENT EXPERT",
+        "fields": [
+          [
+            "SCOPE",
+            "Owns own deliverables end to end; 3 systems, deep in ≥1."
+          ],
+          [
+            "AUTONOMY",
+            "Works independently; mentors juniors informally."
+          ],
+          [
+            "PEOPLE",
+            "No formal reports."
+          ],
+          [
+            "ENGLISH",
+            "Advanced — comfortable on calls, meetings, correspondence."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "Senior MEP Drafter, PE Engineer, BIM Coordinator Senior, Senior Estimator."
+          ]
+        ]
+      },
+      {
+        "code": "L2",
+        "name": "Mid",
+        "kind": "RELIABLE PRODUCER",
+        "fields": [
+          [
+            "SCOPE",
+            "2+ systems or solid in one; executes with light oversight."
+          ],
+          [
+            "AUTONOMY",
+            "Collaborates with PM; contributes to team knowledge."
+          ],
+          [
+            "PEOPLE",
+            "None."
+          ],
+          [
+            "ENGLISH",
+            "Intermediate — reads, writes & understands correspondence."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "Mid MEP Drafter, Mechanical Designer, Estimator, Permit Coordinator."
+          ]
+        ]
+      },
+      {
+        "code": "L1",
+        "name": "Junior",
+        "kind": "ENTRY / LEARNING",
+        "fields": [
+          [
+            "SCOPE",
+            "Basics of 1 MEP system; core software; company standards."
+          ],
+          [
+            "AUTONOMY",
+            "Works under supervision; work is reviewed."
+          ],
+          [
+            "PEOPLE",
+            "None."
+          ],
+          [
+            "ENGLISH",
+            "Basic — reads & understands English correspondence."
+          ],
+          [
+            "EXAMPLE ROLES",
+            "Junior MEP Drafter, Engineer Junior, BIM Coordinator Junior, Junior Estimator."
+          ]
+        ]
+      }
+    ],
+    "tracks": [
+      {
+        "title": "Dual track from L4 up",
+        "kind": "GROW WITHOUT FORCING EVERYONE INTO MANAGEMENT",
+        "bullets": [
+          "Technical track: Lead → Principal / Specialist. Deep expert who sets standards and solves the hardest technical problems — no direct reports required.",
+          "Management track: Discipline Manager → Director. Accountable for people, capacity and outcomes of a discipline or line.",
+          "Both tracks are paid and valued equivalently at the same level. People can move between them."
+        ]
+      },
+      {
+        "title": "PE track (MEPHub)",
+        "kind": "ENGINEERING / CONSULTING LINE",
+        "bullets": [
+          "Junior Engineer collects qualifying experience → Mid → Senior (PE in progress) → Lead PE → Discipline Manager (PE).",
+          "Roles that require or track a US Professional Engineer licence are flagged PE on the chart.",
+          "Licensure timelines and reciprocity vary by US state — confirm with local counsel; HR tracks progress, not legal status."
+        ]
+      }
+    ],
+    "workModel": [
+      "Work model, pulled out of job descriptions into policy. In the legacy docs, work-from-home was written into each role (\"no trabajo en casa\", \"1 día\"). That is a policy, not a competency, so it now lives here: L1–L2 primarily on-site, L3 up to 1 fixed remote day, L4+ hybrid/flexible — all subject to US vs. Colombia location rules per role, which we set case by case. Jurisdiction-specific labour/tax items are flagged for local counsel."
+    ]
+  },
+  "leveling": [
+    {
+      "code": "EXEC",
+      "name": "Executive",
+      "summary": "The company's leadership. The GM / COO runs the company day to day and aligns the three lines and shared functions; the CEO owns vision, capital, growth and the highest-level relationships. Together they set strategy and lead the Directors and the leadership team.",
+      "columns": [
+        "GENERAL MANAGER / COO",
+        "CEO"
+      ],
+      "ready": "",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Strong grasp of the whole delivery model; enough technical fluency to steer priorities and judge risk company-wide",
+            "Sets the company's technical / market vision; not involved in delivery detail"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Fluent in the business tools — company dashboards, financials, capacity, pipeline",
+            "Owns the technology & data strategy at company level; sponsors major investments"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Full authority over company operations; accountable to the CEO / ownership",
+            "Ultimate decision authority; accountable to ownership and the market"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns the whole company's operations — all three lines and the shared functions",
+            "Owns company strategy, capital, growth and the enterprise as a whole"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Owns company-wide delivery quality & operational excellence",
+            "Owns the company's reputation and standards as a brand promise"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Executive fluency; represents the company with major clients, partners and the team",
+            "The company's voice — clients, partners, market and ownership"
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Leads the Directors and the leadership team; owns company culture and performance",
+            "Sets vision and culture; builds the executive team; owns succession"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Owns company-wide utilization, margin and efficiency; the operational guardian of profitability",
+            "Owns overall financial health, growth and capital allocation"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L6",
+      "name": "Director",
+      "summary": "Owns a whole service line (VDC Lab, MEPHub, Permit My House) or a major shared function — accountable for its growth, quality, capacity and P&L-style performance across multiple disciplines. Leads through Discipline Managers, PMs and Leads. Reports to the GM / COO.",
+      "columns": [
+        "DIRECTOR I",
+        "DIRECTOR II"
+      ],
+      "ready": "ready for Executive",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Sets technical direction and standards for the line; relies on DMs / Leads for depth (no longer personally hands-on)",
+            "Shapes the company's technical strategy and its reputation in the market"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Owns the line's tooling & technology strategy and investment; fluent in the business tools (dashboards, financials, capacity)",
+            "Drives technology / innovation strategy across the line; sponsors automation & new capability"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Runs the line independently against goals; escalates only company-level strategy / capital",
+            "A strategic leader; sets direction alongside the executive team"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns a whole service line or major function — multiple disciplines, its people and P&L-style performance",
+            "Owns a larger / multi-line domain or the most strategic function"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Accountable for the line's overall quality & delivery reputation; owns the standards system",
+            "Makes quality & delivery excellence a market differentiator for the line"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Full professional fluency; owns top client & partner relationships; represents the line externally",
+            "A trusted executive-level voice with major clients, partners and the market"
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Builds and leads the line's leadership team (DMs, PMs, Leads); owns culture, senior hiring and succession",
+            "Develops future directors; a senior culture and talent leader for the company"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Owns the line's P&L-style performance — utilization, margin, growth; sets targets and holds the line to them",
+            "Owns the line's financial strategy & sustainable profitability at scale"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L5",
+      "name": "Discipline Manager",
+      "summary": "The vertical owner of a discipline — accountable for its people, capacity, standards and technical quality. Builds and grows the bench that PMs pull from. Less hands-on production, more people, capability and throughput.",
+      "columns": [
+        "DISCIPLINE MANAGER",
+        "SENIOR DISCIPLINE MANAGER"
+      ],
+      "ready": "ready for Director",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Strong technical judgment across the discipline; sets and upholds standards (no longer the hands-on tool peak — that lives with the Lead / Principal)",
+            "Recognized authority for the discipline's technical direction across the company"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Fluent enough to set standards and judge quality; owns the discipline's tool standards with the Leads",
+            "Drives the discipline's tooling & automation strategy; invests in capability"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Runs the discipline independently; escalates only cross-line or strategic issues",
+            "Owns discipline strategy; a trusted decision-maker at the line level"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns one discipline — its pods, leads and producers; balances capacity across projects",
+            "Owns a larger / multi-pod discipline at scale; shapes how the discipline grows"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Accountable for the discipline's quality; owns standards & the QA/QC partnership; the final technical backstop",
+            "Drives continuous improvement; makes the discipline's quality a competitive strength"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Fluent, client- and partner-capable; represents the discipline internally and externally",
+            "A senior voice with clients, partners and leadership"
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Manages the discipline's people — hiring, development, performance, careers; grows Leads and Seniors",
+            "Builds the leadership bench (future Leads / DMs); a culture-carrier for the discipline"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Owns the discipline's utilization & capacity — staffs to demand, protects margin through the right mix and sound estimates",
+            "Owns the discipline's overall profitability & efficiency; sets the productivity bar"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L5",
+      "name": "Project Manager",
+      "summary": "The horizontal owner of a project — accountable for scope, schedule, budget, client and cross-discipline coordination. Reports to the PMO for method & career; assigned out to lines / accounts (matrixed). Pulls people from the discipline benches.",
+      "columns": [
+        "PROJECT MANAGER",
+        "SENIOR PROJECT MANAGER"
+      ],
+      "ready": "ready for larger accounts / PMO",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Solid MEP / project fundamentals — enough to plan the work, judge effort and spot risk across disciplines",
+            "Broad cross-discipline understanding; anticipates technical risk on the most complex projects"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Fluent in the PM toolset (project tracking, schedules, dashboards); reads models & drawings (Navisworks / Autodesk Forma / point clouds) to track progress",
+            "Optimizes the PM toolchain; uses data & dashboards to manage portfolio health"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Runs their projects independently; escalates cross-line or commercial issues to the PMO / line",
+            "Owns the hardest projects & accounts with full autonomy; a trusted decision-maker"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns standard-to-mid projects end-to-end — scope, schedule, budget, client, coordination",
+            "Owns the largest, most complex or multi-line projects & key accounts"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Ensures deliverables meet scope & standards; runs QA/QC gates with the discipline and QA/QC teams",
+            "Drives delivery-process improvements; a model for how projects are run"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Owns the client relationship day-to-day — leads meetings, written & verbal, in fluent English",
+            "Trusted senior point of contact for key clients & partners; handles escalations"
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Leads project teams (matrixed) without owning their careers; sets direction, coordinates, motivates",
+            "Mentors other PMs; helps set PM standards; may guide a portfolio"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Owns the project's commercials end-to-end — budget, hours, invoicing, receivables & change orders; plans to the fee, tracks burn and protects margin",
+            "Owns profitability across a portfolio; sets the standard for how budgets, change orders and billing are run"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L4",
+      "name": "Lead",
+      "summary": "A Lead is a top Senior with leadership — full technical & software mastery, still hands-on — who owns release for the pod's work (the final approval to issue a deliverable) and grows its people. Sets standards, reviews and approves work for release. This is the fork: technical track (Principal / Specialist) or management (Discipline Manager). Goal: own the craft, quality and delivery of your pod.",
+      "columns": [
+        "LEAD I",
+        "LEAD II"
+      ],
+      "ready": "ready for Manager or Principal",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "The technical authority for your pod; deep, broad proficiency — the person others come to",
+            "Owns the craft across multiple pods / the whole discipline; sets the technical direction"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Mastery of the tools your pod requires; sets the pod's tool standards & workflows; brings in new tools when useful",
+            "The department's tooling authority; owns standards, drives automation & new-tool adoption where it helps, and levels up the team"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Owns release for the pod — the final approval to issue any deliverable (drawings, models, calcs or coordination) and accountable for what ships. Makes the technical calls; escalates only cross-discipline / business issues",
+            "Sets direction for the discipline's technical approach; trusted with ambiguity"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns the hardest technical scope in the pod; guides how complex work is approached",
+            "Shapes approach across projects; plans the discipline's work; solves the toughest problems"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Owns QA/QC for the pod's output; reviews and approves work for release; sets the standards & checklists",
+            "Owns quality standards for the discipline; partners with the shared QA/QC team on continuous improvement"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Leads coordination calls and client / external technical discussions in English — fully client-capable.",
+            "A trusted technical voice in English with clients & partners; represents the discipline."
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Leads and develops the pod; reviews work, coaches, sets expectations (with or without formal reports)",
+            "Grows future leads; a people & craft leader — the fork: management (Discipline Manager) or technical (Principal)"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Builds and defends the pod's production budget against the Estimating team's estimate; ties hours to the project fee and its invoicing milestones; raises change orders with the PM when scope grows",
+            "Owns the pod / discipline's utilization & margin; manages change orders and keeps the pod's work aligned to what has been billed"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L3",
+      "name": "Senior",
+      "summary": "A fully independent expert who owns complex deliverables end-to-end and is a technical go-to. First level with client / external contact; the Lead may trust a Senior to deliver as a judgement call, but release accountability stays with the Lead. English gate at Senior III: to advance past Senior II — on any track, no exceptions — you must hold and lead a technical discussion in spoken English with clients. (From Mid, people “ghost” English meetings to build spoken confidence early.) Goal: the department's technical reference — ready for Lead or the Principal track.",
+      "columns": [
+        "SENIOR I",
+        "SENIOR II",
+        "SENIOR III"
+      ],
+      "ready": "ready for Lead",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Deep, dependable proficiency in your department; owns complex work confidently",
+            "Recognized expert in your department; solves the hardest technical problems",
+            "The technical reference for your department; shapes how the work is done"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Expert user — deep command of the tools and highly efficient; improves their own workflow and helps teammates when they get stuck",
+            "Solves the hard, non-standard software problems for the team; sets up and improves the shared ways of working in the tools and shows others how",
+            "The person the team turns to when they're stuck in the software — the recognized software reference for the discipline. You get here by consistently solving problems others can't, sharing what you learn, and picking up new or adjacent tools as projects require"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Produces complex work with little supervision; still routed through the Lead for release",
+            "The Lead may trust them to deliver — including to clients — as a judgement call; the Lead remains accountable",
+            "Consistently produces work at the quality needed to go out the door; the natural bridge to Lead, who gives the final approval to issue any deliverable — drawings, models, calculations or coordination, across VDC Lab and MEPHub"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns complex, non-standard deliverables end-to-end",
+            "Takes on the most difficult scope; when required, searches out or collaborates with contributors to approach complex problems",
+            "Shapes the approach for complex projects; contributes to scoping & planning"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Sets the quality bar by example; catches issues others miss",
+            "Reviews others' work; defines local best practice & checklists",
+            "Owns the department's quality standards in practice; drives continuous improvement"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Deep comprehension; writes clean, professional English on deliverables and in written client correspondence (emails, RFIs) when needed. An active listener on client / technical calls who speaks up on familiar points.",
+            "Top of the written / document track: handles all written client communication confidently and participates in spoken English (contributes and answers questions in meetings and calls) — but is not yet required to lead a discussion. The highest level reachable without client-ready spoken leadership.",
+            "English gate: to advance past Senior II — on any track, no exceptions — you must be able to hold and lead a technical discussion in spoken English with clients and partners. Every level above (Lead, PM, DM, Director) requires it. Represents the department credibly with clients, on calls and in writing."
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Actively mentors juniors & mids; a trusted informal leader",
+            "Coaches the pod; may lead a small team or workstream",
+            "Develops future seniors / leads; a role model for the department"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Delivers complex work within the hours set by the Estimating team; crucially, understands the project budget behind those hours — not just their own tasks. (Estimating owns the numbers; the Senior works to them.)",
+            "Reliably protects the budget on complex work; when asked, gives the Estimating team technical input on complex or non-standard scope, and flags out-of-scope / extra work early to the PM as a potential change order",
+            "A trusted technical sounding board for Estimating on the hardest scope; connects scope, hours and margin across projects and heads off overruns before they land — helping protect the department's profitability, while Estimating still owns the estimate"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L2",
+      "name": "Mid",
+      "summary": "A reliable producer who executes standard deliverables end-to-end, proficient in their department — but work is still reviewed before it goes out. The bridge from doing routine work to owning real scope. Goal: fully independent in production and a dependable quality reference, ready for Senior.",
+      "columns": [
+        "MID I",
+        "MID II",
+        "MID III"
+      ],
+      "ready": "ready for Senior",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Proficient in your department / assignment; steadily building depth",
+            "Well-rounded, dependable proficiency in your department; handles typical coordination",
+            "Deep, reliable proficiency in your department; handles non-standard details; ready to go deep (Senior)"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Works at a steady, reliable pace in the tools your role uses day to day; handles standard tasks on their own with only occasional questions",
+            "Fast and clean across the full set of tools your work requires; troubleshoots the common problems without help and escalates only the unusual ones",
+            "Proficient and self-sufficient — solves most software problems they run into on their own and rarely needs help. This is the target software level for a fully-fledged designer / drafter"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "Light supervision on standard work; everything is reviewed before it goes out",
+            "Minimal supervision on standard deliverables; makes routine decisions — work is still checked before release",
+            "Largely independent producing standard work, but not yet authorized to send work out — release remains the Lead's responsibility"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Owns standard deliverables end-to-end (full sheets, system layouts)",
+            "Handles larger or more complex tasks in your department's scope; anticipates coordination issues",
+            "Takes on complex / non-standard scope with guidance; contributes to project setup"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Consistent quality on standard work; self-checks against standards/checklists",
+            "Rework is rare; catches own errors before review; applies standards unprompted",
+            "A quality reference for juniors; spots issues in others' work; suggests standard improvements"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Strong reading comprehension; writes notes, keynotes and annotations on deliverables independently. Starts to listen in on English meetings and conversations as an observer (“ghosting”) — no speaking required.",
+            "Precise, professional written English on deliverables (notes, keynotes, RFIs, emails); AI as a tool, not a crutch. Regularly sits in on English meetings and follows the discussion; may offer a few words when comfortable.",
+            "Reliable, polished document-facing English across all standard work. Attends English meetings comfortably and occasionally responds — still no requirement to speak or lead."
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Reliable teammate; answers juniors' basic questions",
+            "Informally guides juniors on tasks; reviews simple work",
+            "A go-to peer; mentors juniors, helps onboard; may lead a small task"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Reliably delivers standard work within the hours set for it; logs time cleanly without reminders",
+            "Manages own time across a full deliverable to hit a budget others set for it; flags scope creep early with a proposed fix",
+            "Holds the budget on harder work; works to the hours set by Estimating and flags early when a task runs long; starts to see how their piece fits the overall project budget, not just their own hours"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "L1",
+      "name": "Junior",
+      "summary": "An entry producer learning the craft and the company's standards; works under supervision on routine, well-defined work that is always reviewed. Reading comprehension in English is a hiring gate. Goal: become reliable on routine scope.",
+      "columns": [
+        "JUNIOR I",
+        "JUNIOR II",
+        "JUNIOR III"
+      ],
+      "ready": "ready for Mid",
+      "rows": [
+        {
+          "label": "Technical mastery",
+          "values": [
+            "Learning the fundamentals of your assigned department and its typical details & standards",
+            "Solid on the fundamentals of your department; recognizes common issues",
+            "Proficient on routine work within your department"
+          ]
+        },
+        {
+          "label": "Software & tools",
+          "values": [
+            "Being introduced to the company's software stack (Revit, AutoCAD, Navisworks, Forma, point-cloud tools and the apps your discipline uses); follows guided steps and asks questions often as new tasks come up",
+            "Comfortable with the everyday commands of the core tools; completes routine tasks with occasional help and knows who to ask when something new comes up",
+            "Uses the core tools on standard work without step-by-step help; needs guidance only on unfamiliar features and starts to look things up on their own"
+          ]
+        },
+        {
+          "label": "Autonomy",
+          "values": [
+            "All work supervised and checked",
+            "Supervised; needs less day-to-day direction on routine work",
+            "Reduced supervision on routine work — but does not release work; a Lead / reviewer checks and signs off"
+          ]
+        },
+        {
+          "label": "Scope & complexity",
+          "values": [
+            "Assists on small, well-defined tasks (redlines, model updates, simple sheets)",
+            "Completes routine, well-defined tasks",
+            "Owns routine packages end-to-end"
+          ]
+        },
+        {
+          "label": "Quality & standards",
+          "values": [
+            "Frequent corrections; learning what “good” looks like",
+            "Fewer corrections; uses checklists consistently",
+            "Consistent quality on standard scope"
+          ]
+        },
+        {
+          "label": "Communication & English",
+          "values": [
+            "Reads and understands English documents, standards, drawings and instructions — reading comprehension is the hiring gate. Produces basic document-facing English (plan notes, keynotes) with AI assistance.",
+            "Reads English project documents and markups comfortably; writes simple notes and annotations on deliverables (AI-assisted).",
+            "Understands all project documents; writes clear, correct annotations and keynotes on deliverables (AI assistance as needed). No spoken-English requirement."
+          ]
+        },
+        {
+          "label": "Leadership & mentoring",
+          "values": [
+            "Responsible for own onboarding & learning",
+            "Reliable teammate",
+            "May help onboard newer juniors informally"
+          ]
+        },
+        {
+          "label": "Productivity & Hours Discipline",
+          "values": [
+            "Logs time accurately by task/phase; learns that every task carries an estimate",
+            "Knows the hours budgeted for their work; flags early when running long; steadily faster",
+            "Consistently delivers routine tasks within the estimated hours; proactively raises overrun risk"
+          ]
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "vdc",
+      "label": "VDC Lab",
+      "roles": [
+        {
+          "line": "VDC Lab",
+          "title": "Mechanical MEP Designer",
+          "meta": "Department: Mechanical Discipline · Reports to: Mechanical MEP Design Lead → Mechanical Discipline Manager (VDC Lab) · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the company Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Produces fabrication-level mechanical shop drawings and BIM models for the U.S. construction market — turning engineering intent into precise, coordinated, buildable deliverables, within VDC Lab standards and the estimated hours."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Model and draft mechanical systems (HVAC ductwork, piping, equipment) in Revit and AutoCAD to fabrication level of detail.",
+                "Produce coordinated, standards-compliant shop drawings and sheets from engineering documents and markups.",
+                "Incorporate redlines/markups accurately; keep models and drawings clean and to company standards.",
+                "Participate in multi-trade BIM coordination and clash resolution; use 3D point-cloud / scan data where provided.",
+                "Self-check against checklists before review; correct QA/QC feedback.",
+                "Log time accurately, deliver within estimated hours, and raise overrun risk early."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Proficiency in the mechanical discipline (HVAC ductwork, piping, equipment, fabrication practices), appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Revit, AutoCAD, Navisworks, Autodesk Forma, 3D point clouds — learning the stack at Junior, mastery growing through Senior."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Fabrication or field experience in mechanical systems.",
+                "Custom Revit families / LOD 350–400 modeling.",
+                "Familiarity with U.S. codes and coordination workflows.",
+                "Conversational spoken English."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "Plumbing MEP Designer",
+          "meta": "Department: Plumbing Discipline · Reports to: Plumbing MEP Design Lead → Plumbing Discipline Manager (VDC Lab) · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the company Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Produces fabrication-level plumbing shop drawings and BIM models for the U.S. construction market — turning engineering intent into precise, coordinated, buildable deliverables, within VDC Lab standards and the estimated hours."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Model and draft plumbing systems (domestic water, sanitary, storm, gas) in Revit and AutoCAD to fabrication level of detail.",
+                "Produce coordinated, standards-compliant shop drawings and sheets from engineering documents and markups.",
+                "Incorporate redlines/markups accurately; keep models and drawings clean and to company standards.",
+                "Participate in multi-trade BIM coordination and clash resolution; use 3D point-cloud / scan data where provided.",
+                "Self-check against checklists before review; correct QA/QC feedback.",
+                "Log time accurately, deliver within estimated hours, and raise overrun risk early."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Proficiency in the plumbing discipline (domestic water, sanitary, storm, gas, fabrication practices), appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Revit, AutoCAD, Navisworks, Autodesk Forma, 3D point clouds — learning the stack at Junior, mastery growing through Senior."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Fabrication or field experience in plumbing systems.",
+                "Custom Revit families / LOD 350–400 modeling.",
+                "Familiarity with U.S. codes and coordination workflows.",
+                "Conversational spoken English."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "Electrical MEP Designer",
+          "meta": "Department: Electrical Discipline · Reports to: Electrical MEP Design Lead → Electrical Discipline Manager (VDC Lab) · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the company Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Produces fabrication-level electrical shop drawings and BIM models for the U.S. construction market — turning engineering intent into precise, coordinated, buildable deliverables, within VDC Lab standards and the estimated hours."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Model and draft electrical systems (power, lighting, low-voltage, containment) in Revit and AutoCAD to fabrication level of detail.",
+                "Produce coordinated, standards-compliant shop drawings and sheets from engineering documents and markups.",
+                "Incorporate redlines/markups accurately; keep models and drawings clean and to company standards.",
+                "Participate in multi-trade BIM coordination and clash resolution; use 3D point-cloud / scan data where provided.",
+                "Self-check against checklists before review; correct QA/QC feedback.",
+                "Log time accurately, deliver within estimated hours, and raise overrun risk early."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Proficiency in the electrical discipline (power, lighting, low-voltage, containment, fabrication practices), appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Revit, AutoCAD, Navisworks, Autodesk Forma, 3D point clouds — learning the stack at Junior, mastery growing through Senior."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Fabrication or field experience in electrical systems.",
+                "Custom Revit families / LOD 350–400 modeling.",
+                "Familiarity with U.S. codes and coordination workflows.",
+                "Conversational spoken English."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "Sprinkler MEP Designer",
+          "meta": "Department: Sprinkler Discipline · Reports to: Sprinkler MEP Design Lead → Sprinkler Discipline Manager (VDC Lab) · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the company Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Produces fabrication-level sprinkler shop drawings and BIM models for the U.S. construction market — turning engineering intent into precise, coordinated, buildable deliverables, within VDC Lab standards and the estimated hours."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Model and draft sprinkler systems (fire-protection / sprinkler piping and heads) in Revit and AutoCAD to fabrication level of detail.",
+                "Produce coordinated, standards-compliant shop drawings and sheets from engineering documents and markups.",
+                "Incorporate redlines/markups accurately; keep models and drawings clean and to company standards.",
+                "Participate in multi-trade BIM coordination and clash resolution; use 3D point-cloud / scan data where provided.",
+                "Self-check against checklists before review; correct QA/QC feedback.",
+                "Log time accurately, deliver within estimated hours, and raise overrun risk early."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Proficiency in the sprinkler discipline (fire-protection / sprinkler piping and heads, fabrication practices), appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Revit, AutoCAD, Navisworks, Autodesk Forma, 3D point clouds — learning the stack at Junior, mastery growing through Senior."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Fabrication or field experience in sprinkler systems.",
+                "Custom Revit families / LOD 350–400 modeling.",
+                "Familiarity with U.S. codes and coordination workflows.",
+                "Conversational spoken English."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "BIM Coordinator",
+          "meta": "Department: BIM Coordination · Reports to: BIM Coordinator Lead → BIM Coordination Discipline Manager (VDC Lab) · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Runs multi-trade BIM coordination and clash detection so models are constructible and trades fit — internally and with external project teams."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Set up and maintain federated models; run clash detection and track resolution (Navisworks / Autodesk Forma).",
+                "Lead / support coordination sessions; drive issues to closure with the disciplines.",
+                "Enforce model quality, naming and LOD standards.",
+                "Integrate 3D point-cloud / scan data for existing-conditions coordination.",
+                "Log time and keep coordination within the estimated hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Proficiency in multi-trade coordination and model management, appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Navisworks, Autodesk Forma, Revit, 3D point clouds; BIM 360/ACC-style common data environments."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Experience running external coordination calls.",
+                "Dynamo / automation for clash workflows.",
+                "Construction/field experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "Reality Capture Specialist",
+          "meta": "Department: BIM Coordination · Reports to: BIM Coordinator Lead (VDC Lab) · Levels: Junior (L1) — grows toward Mid via the Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Captures and processes 3D point clouds / scan data and registers scan-to-BIM, giving the team accurate existing-conditions to design and coordinate against."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Process, register and clean 3D point-cloud / scan data.",
+                "Produce scan-to-BIM deliverables and existing-conditions models.",
+                "Maintain reality-capture standards and file organization.",
+                "Log time and work to the estimated hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Reality capture / scan-to-BIM fundamentals; point-cloud processing."
+                ],
+                [
+                  "Software & tools",
+                  "ReCap / point-cloud tools, Revit, Navisworks, Autodesk Forma."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Supervised; work reviewed; growing to independent on routine capture."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Field scanning experience.",
+                "Registration QA experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "MEP Design Lead",
+          "meta": "Department: MEP Design (any discipline) · Reports to: Discipline Manager (VDC Lab) · Levels: Lead (L4) — technical/management fork.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "The technical authority for a design pod — sets standards, reviews and signs off work, mentors, and owns the pod's craft and quality while still hands-on. A Lead is a top Senior with leadership."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Set and enforce technical standards and checklists for the pod.",
+                "Review and sign off deliverables; own the pod's QA/QC to standard.",
+                "Mentor and develop Seniors/Mids/Juniors; lead squad delivery.",
+                "Build and defend estimates; manage the pod's hours to keep projects profitable.",
+                "Lead coordination calls and client/external technical discussions."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Complete mastery of the discipline; the pod's technical authority."
+                ],
+                [
+                  "Software & tools",
+                  "Complete mastery of the full stack (Revit, AutoCAD, Navisworks, Autodesk Forma, 3D point clouds); sets tool standards."
+                ],
+                [
+                  "English",
+                  "Fully client-capable; leads coordination and technical discussions in English."
+                ],
+                [
+                  "Autonomy",
+                  "Fully autonomous; makes the technical calls for the pod."
+                ],
+                [
+                  "Productivity & hours",
+                  "Builds and defends estimates; owns the pod's hours and profitability."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Path to Principal (technical) or Discipline Manager (management).",
+                "Experience mentoring/upskilling teams."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "BIM Coordinator Lead",
+          "meta": "Department: BIM Coordination · Reports to: BIM Coordination Discipline Manager (VDC Lab) · Levels: Lead (L4).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Technical authority for BIM coordination — leads coordination sessions, owns model quality and clash standards, and mentors coordinators."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Lead multi-trade coordination and clash resolution across projects.",
+                "Own model-quality, clash and LOD standards.",
+                "Mentor coordinators; review and sign off coordination deliverables.",
+                "Build and manage coordination estimates/hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Mastery of multi-trade coordination and model management."
+                ],
+                [
+                  "Software & tools",
+                  "Complete mastery of Navisworks, Autodesk Forma, Revit, 3D point clouds and the CDE."
+                ],
+                [
+                  "English",
+                  "Fully client-capable; leads coordination calls."
+                ],
+                [
+                  "Autonomy",
+                  "Fully autonomous for coordination."
+                ],
+                [
+                  "Productivity & hours",
+                  "Builds/defends coordination estimates; protects hours."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Automation for clash workflows."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "Discipline Manager — VDC Lab",
+          "meta": "Department: Discipline (Mechanical / Plumbing / Electrical / FP / BIM) · Reports to: VDC Lab Director · Levels: Manager (L5) — vertical owner. Two steps: Discipline Manager → Senior Discipline Manager.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "The vertical owner of a VDC discipline — accountable for its people, capacity, standards and technical quality; builds and grows the bench that PMs pull from."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own hiring, development, performance and careers for the discipline; grow Leads and Seniors.",
+                "Own the discipline's standards, quality and the QA/QC partnership.",
+                "Balance capacity across projects; staff to demand.",
+                "Own the discipline's utilization and margin through the right mix and sound estimates.",
+                "Represent the discipline internally and with clients/partners."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Strong technical judgment across the discipline; sets standards (no longer the hands-on tool peak)."
+                ],
+                [
+                  "Software & tools",
+                  "Fluent enough to set standards and judge quality; owns the discipline's tool standards with the Leads."
+                ],
+                [
+                  "English",
+                  "Fluent, client- and partner-capable."
+                ],
+                [
+                  "Autonomy",
+                  "Runs the discipline independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns the discipline's utilization, capacity and margin discipline."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Prior Lead/Senior in the discipline.",
+                "People-management experience across US/Colombia teams."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "VDC Lab",
+          "title": "VDC Lab Director",
+          "meta": "Department: VDC Lab (line) · Reports to: General Manager / COO · Levels: Director (L6). Two steps: Director → Senior Director.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the VDC Lab line — shop drawings, BIM & VDC — accountable for its growth, quality, capacity and P&L-style performance across all disciplines; leads through Discipline Managers and Leads."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Set line strategy; own growth, quality and P&L-style performance.",
+                "Build and lead the line's leadership team (DMs, Leads); own senior hiring and succession.",
+                "Own the line's tooling & technology strategy and standards system.",
+                "Own top client & partner relationships for the line.",
+                "Own utilization, margin and growth targets and hold the line to them."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Sets technical direction and standards for the line; relies on DMs/Leads for depth."
+                ],
+                [
+                  "Software & tools",
+                  "Owns the line's tooling & technology strategy; fluent in business tools (dashboards, financials, capacity)."
+                ],
+                [
+                  "English",
+                  "Full professional fluency; represents the line externally."
+                ],
+                [
+                  "Autonomy",
+                  "Runs the line independently against goals."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns the line's P&L-style performance — utilization, margin, growth."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Experience scaling an AEC/BIM production line.",
+                "P&L / operations leadership."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mephub",
+      "label": "MEPHub",
+      "roles": [
+        {
+          "line": "MEPHub",
+          "title": "MEP Design Engineer",
+          "meta": "Department: Engineering (Mechanical / Electrical / Plumbing / FP) · Reports to: Lead Engineer → Engineering Discipline Manager (MEPHub) · Levels: Engineer Junior (L1) · Designer (L2) · PE Engineer (L3) — PE-track; per the Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Develops MEP engineering designs and consulting deliverables for the U.S. market on the PE track — collecting qualifying experience toward U.S. Professional Engineer licensure."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Develop MEP engineering designs, calculations and documents under review.",
+                "Apply codes and standards; support code-compliance and QA/QC.",
+                "Grow from supervised designs (Junior) to leading discipline designs (PE Engineer).",
+                "Collect PE-qualifying experience; progress toward licensure.",
+                "Log time and work to the estimated hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "MEP engineering fundamentals and codes; discipline depth appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Revit, AutoCAD, engineering calculation tools, Navisworks / Autodesk Forma."
+                ],
+                [
+                  "English",
+                  "All work in English; reading comprehension required; growing to client-facing at PE level."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised → Designer: under review → PE Engineer: leads discipline designs."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Progress toward U.S. PE licensure (confirm reciprocity with local counsel).",
+                "EIT/FE passed.",
+                "Discipline specialization."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. PE-track roles require or track a U.S. PE licence — licensure/reciprocity confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "MEPHub",
+          "title": "Lead Engineer",
+          "meta": "Department: Engineering discipline · Reports to: Engineering Discipline Manager (MEPHub) · Levels: Lead (L4), PE-track.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Technical authority for an engineering discipline — stamps/reviews designs, sets standards and mentors engineers and designers."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own technical authority; stamp/review designs for the discipline.",
+                "Set engineering standards and code-compliance practice.",
+                "Mentor PE engineers, designers and juniors.",
+                "Build/defend estimates and protect the discipline's hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Licensed/senior engineer; deep discipline mastery."
+                ],
+                [
+                  "Software & tools",
+                  "Mastery of the engineering + drafting stack (Revit, AutoCAD, calc tools, Navisworks/Forma)."
+                ],
+                [
+                  "English",
+                  "Fully client-capable in English."
+                ],
+                [
+                  "Autonomy",
+                  "Fully autonomous; the discipline's technical authority."
+                ],
+                [
+                  "Productivity & hours",
+                  "Builds/defends estimates; owns the discipline's hours."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "U.S. PE licence (confirm with local counsel).",
+                "Multi-state licensure."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "MEPHub",
+          "title": "Engineering Discipline Manager",
+          "meta": "Department: Engineering discipline · Reports to: MEPHub Director (Engineering) · Levels: Manager (L5), PE-track.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Vertical owner of an engineering discipline — its people, capacity, code/standards and quality; builds the PE-track bench."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own hiring, development and careers for the engineering discipline; grow leads and PE engineers.",
+                "Own code/standards and engineering QA/QC partnership.",
+                "Balance capacity across projects; staff to demand.",
+                "Own the discipline's utilization and margin.",
+                "Support engineers toward PE licensure."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Strong engineering judgment; sets discipline standards."
+                ],
+                [
+                  "Software & tools",
+                  "Fluent enough to set standards and judge quality."
+                ],
+                [
+                  "English",
+                  "Fluent, client- and partner-capable."
+                ],
+                [
+                  "Autonomy",
+                  "Runs the discipline independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns the discipline's utilization and margin."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "U.S. PE licence.",
+                "People leadership across US/Colombia."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "MEPHub",
+          "title": "MEPHub Director (Engineering)",
+          "meta": "Department: MEPHub (line) · Reports to: General Manager / COO · Levels: Director (L6), PE-track.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the MEPHub line — MEP engineering & consulting — accountable for PE-track quality, growth and P&L-style performance across engineering disciplines."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Set line strategy; own growth, quality and P&L-style performance.",
+                "Build and lead the engineering leadership team; own the PE-track pipeline and succession.",
+                "Own code/standards and engineering quality reputation.",
+                "Own top client & partner relationships.",
+                "Own utilization, margin and growth targets."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Sets engineering technical/market direction; relies on DMs/Leads for depth."
+                ],
+                [
+                  "Software & tools",
+                  "Owns the line's engineering-tech strategy; fluent in business tools."
+                ],
+                [
+                  "English",
+                  "Full professional fluency; represents the line externally."
+                ],
+                [
+                  "Autonomy",
+                  "Runs the line independently against goals."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns the line's P&L-style performance."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "U.S. PE licence.",
+                "Engineering-services P&L leadership."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pmh",
+      "label": "Permit My House",
+      "roles": [
+        {
+          "line": "Permit My House",
+          "title": "Permit Designer",
+          "meta": "Department: Permit-ready Design · Reports to: Permit My House Director · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Produces permit-ready MEP design packages and supports submittals for the U.S. residential/light-commercial market — the accessible, client-facing on-ramp."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Develop permit-ready MEP design packages to jurisdiction requirements.",
+                "Prepare and support submittals and corrections.",
+                "Apply code and jurisdiction standards; keep packages clean and compliant.",
+                "Coordinate with U.S. clients on permit needs (Senior).",
+                "Log time and work to the estimated hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Permit-ready MEP design and jurisdiction/code fundamentals, appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Revit, AutoCAD, Navisworks, Autodesk Forma, 3D point clouds — learning the stack at Junior, mastery growing through Senior."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "U.S. permit/AHJ submittal experience.",
+                "Residential/light-commercial MEP experience.",
+                "Conversational spoken English (client-facing)."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Permit My House",
+          "title": "Permit My House Director",
+          "meta": "Department: Permit My House (line) · Reports to: General Manager / COO · Levels: Director (L6). (May start as an L5 Line Lead until the line scales.)",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the Permit My House line — permit-ready MEP design + submittal support; the U.S. client-facing on-ramp — accountable for growth, quality and P&L-style performance; directly leads the permit designers."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Set line strategy; own growth, quality and P&L-style performance.",
+                "Directly lead and develop the permit designers.",
+                "Own jurisdiction/code fluency and submittal quality.",
+                "Own U.S. client relationships and the line's front-of-house experience.",
+                "Own utilization, margin and growth targets."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Strong permit-design and jurisdiction judgment; sets standards."
+                ],
+                [
+                  "Software & tools",
+                  "Fluent in the design stack and permit/submittal tools; fluent in business tools."
+                ],
+                [
+                  "English",
+                  "Full professional fluency; U.S. client-facing."
+                ],
+                [
+                  "Autonomy",
+                  "Runs the line independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns the line's P&L-style performance."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "U.S. permit/AHJ expertise across jurisdictions.",
+                "Client-service leadership."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shared",
+      "label": "Shared",
+      "roles": [
+        {
+          "line": "Shared",
+          "title": "Project Manager",
+          "meta": "Department: Project Delivery / PMO (matrixed) · Reports to: Project Delivery / PMO Director (assigned to a line/account) · Levels: Project Manager (L5) · Senior Project Manager — per the Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "The horizontal owner of a project — accountable for it succeeding in every dimension: scope, schedule, budget, client and cross-discipline coordination. Reports to the PMO for method & career; assigned to lines/accounts. Pulls people from the discipline benches."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own projects end-to-end — scope, schedule, budget, client and coordination.",
+                "Own the client relationship day-to-day; lead meetings and communication.",
+                "Plan to the fee, track burn, protect margin and flag overruns early.",
+                "Run QA/QC gates with the discipline and QA/QC teams.",
+                "Coordinate matrixed project teams across disciplines."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Project Manager",
+                  "Owns standard-to-mid projects end-to-end."
+                ],
+                [
+                  "Senior Project Manager",
+                  "Owns the largest, most complex or multi-line projects & key accounts."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Solid MEP/project fundamentals — enough to plan work, judge effort and spot risk across disciplines."
+                ],
+                [
+                  "Software & tools",
+                  "PM toolset (project tracking, schedules, dashboards); reads models/drawings to track progress."
+                ],
+                [
+                  "English",
+                  "Owns the client relationship in fluent English."
+                ],
+                [
+                  "Autonomy",
+                  "Runs their projects independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns the project budget & hours — plans to the fee, tracks burn, protects margin."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Delivery/PM certification (PMP or similar).",
+                "MEP/AEC delivery background.",
+                "Multi-line project experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Project Delivery / PMO Director",
+          "meta": "Department: Project Delivery / PMO · Reports to: General Manager / COO · Levels: Director (L6).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the PM craft, delivery methodology and PM career path across all three lines; guarantees projects ship on time, on budget and on standard. PMs report here and are assigned out to lines (matrixed)."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own delivery methodology, standards and PM career development.",
+                "Build and lead the PM team; assign PMs to lines/accounts.",
+                "Own portfolio-level delivery health, on-time and margin performance.",
+                "Partner with lines and QA/QC on delivery quality.",
+                "Own the PMO's contribution to company profitability."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Broad cross-discipline delivery understanding."
+                ],
+                [
+                  "Software & tools",
+                  "Owns the PM toolchain; uses data/dashboards for portfolio health."
+                ],
+                [
+                  "English",
+                  "Executive fluency; senior client/partner contact."
+                ],
+                [
+                  "Autonomy",
+                  "Sets delivery direction with the executive team."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns delivery profitability across the portfolio."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "PMO leadership at scale.",
+                "AEC delivery background."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "QA/QC Lead",
+          "meta": "Department: QA/QC (dedicated per department) · Reports to: QA/QC Manager (embedded with a department) · Levels: Lead (L4).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "The dedicated QA/QC reviewer for a department (e.g. Mechanical, Electrical, BIM, Engineering & Code) — reviews deliverables, enforces standards and drives quality, as part of the shared QA/QC team."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Review department deliverables against standards and codes; sign off quality.",
+                "Own the department's checklists and QA/QC standards with the Leads.",
+                "Track quality issues and drive corrective/continuous improvement.",
+                "Partner with the department and the shared QA/QC Manager."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Deep discipline knowledge for the assigned department; strong standards judgment."
+                ],
+                [
+                  "Software & tools",
+                  "Fluent across the department's stack (Revit, AutoCAD, Navisworks, Autodesk Forma, point clouds)."
+                ],
+                [
+                  "English",
+                  "Fully capable in English; clear written feedback."
+                ],
+                [
+                  "Autonomy",
+                  "Fully autonomous for quality review."
+                ],
+                [
+                  "Productivity & hours",
+                  "Reviews with efficiency; protects rework/hours."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Senior/Lead background in the department.",
+                "Codes/standards expertise."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "QA/QC Manager",
+          "meta": "Department: QA/QC (shared function) · Reports to: General Manager / COO · Levels: Manager (L5).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the shared QA/QC function and company-wide quality standards; supplies a reviewer dedicated to each department (matrixed) and drives quality as a competitive strength."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own the company-wide QA/QC standards system and process.",
+                "Lead and develop the per-department QA/QC Leads.",
+                "Track quality metrics; drive continuous improvement across lines.",
+                "Partner with Discipline Managers and PMs on delivery quality."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Broad cross-discipline quality and standards judgment."
+                ],
+                [
+                  "Software & tools",
+                  "Fluent enough to set standards and judge quality across tools."
+                ],
+                [
+                  "English",
+                  "Fluent, client/partner-capable."
+                ],
+                [
+                  "Autonomy",
+                  "Runs the QA/QC function independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns quality efficiency; reduces rework across the company."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Quality-systems leadership.",
+                "Multi-discipline AEC background."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Estimator",
+          "meta": "Department: Estimating · Reports to: Estimating Manager · Levels: Junior (L1) · Mid (L2) · Senior (L3) — per the Leveling Model.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Prepares MEP estimates and take-offs for the three lines — accurate quantities and pricing that underpin profitable bids."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Prepare estimates and quantity take-offs across MEP disciplines.",
+                "Liaise with vendors for pricing; maintain cost data.",
+                "Support bid reviews; grow to independent estimating (Senior).",
+                "Log time and work to the estimated hours."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Level expectations",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Junior (L1)",
+                  "Assists on routine tasks; supervised; learning standards, systems and the software stack."
+                ],
+                [
+                  "Mid (L2)",
+                  "Owns standard deliverables end-to-end with light oversight; proficient across the tools."
+                ],
+                [
+                  "Senior (L3)",
+                  "Owns complex, non-standard packages; a technical go-to and mentor; first client contact."
+                ]
+              ]
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Estimating and take-off knowledge across MEP, appropriate to level."
+                ],
+                [
+                  "Software & tools",
+                  "Estimating/take-off software, Bluebeam, Excel, Revit/Navisworks quantities."
+                ],
+                [
+                  "English",
+                  "All work is in English; reading comprehension is a hiring gate. Junior writes notes/keynotes with AI help; Mid writes clear notes independently; Senior is comfortable on calls/meetings and first client contact."
+                ],
+                [
+                  "Autonomy",
+                  "Junior: supervised, work reviewed → Mid: independent on standard scope → Senior: owns complex work end-to-end and collaborates with peers on the hardest problems."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to the estimated hours and logs time cleanly; grows from working within the estimate to planning own work to the fee. Protecting project profitability is part of the role at every level."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Broad MEP take-off experience.",
+                "Cost-database management."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Estimating Manager",
+          "meta": "Department: Estimating (shared function) · Reports to: General Manager / COO · Levels: Manager (L5).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the shared estimating function serving all three lines; final review of estimates and the accuracy that protects margin."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own estimating standards, process and final review.",
+                "Lead and develop the estimating team.",
+                "Own estimate accuracy and turnaround; support winning, profitable bids.",
+                "Maintain cost databases and vendor relationships."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Broad estimating mastery across MEP."
+                ],
+                [
+                  "Software & tools",
+                  "Mastery of estimating tools and quantity workflows."
+                ],
+                [
+                  "English",
+                  "Fluent, client/vendor-capable."
+                ],
+                [
+                  "Autonomy",
+                  "Runs estimating independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns estimate accuracy — directly protects margin."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Estimating leadership.",
+                "U.S. market cost knowledge."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "People & Culture Director",
+          "meta": "Department: People & Culture (HR) · Reports to: General Manager / COO · Levels: Director (L6).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns HR strategy across the U.S.–Colombia workforce: hiring, development, performance, culture and policy — including this leveling and career framework."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own HR strategy, policy and the competency/leveling framework.",
+                "Lead hiring, development, performance and culture programs.",
+                "Own the US–Colombia people model (with local counsel on jurisdiction items).",
+                "Partner with leaders on org design, succession and retention.",
+                "Own people metrics and workforce planning."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "HR strategy and org-design expertise; AEC familiarity."
+                ],
+                [
+                  "Software & tools",
+                  "HRIS, ATS and people-analytics tools."
+                ],
+                [
+                  "English",
+                  "Full professional fluency."
+                ],
+                [
+                  "Autonomy",
+                  "Runs HR independently; sets people strategy with leadership."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns workforce planning aligned to utilization and growth."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC/engineering HR experience.",
+                "Bi-national (US/Colombia) workforce experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "HR Business Partner",
+          "meta": "Department: People & Culture (HR) · Reports to: People & Culture Director · Levels: Senior (L3).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Day-to-day HR support, employee relations and processes across the US–Colombia team."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Support hiring, onboarding, relations and performance processes.",
+                "Advise managers on people matters and policy.",
+                "Maintain HR records and compliance (with local counsel on jurisdiction items).",
+                "Support culture and engagement initiatives."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "HR generalist knowledge; relations and processes."
+                ],
+                [
+                  "Software & tools",
+                  "HRIS/ATS tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English (US–Colombia coordination)."
+                ],
+                [
+                  "Autonomy",
+                  "Works independently; mentors informally."
+                ],
+                [
+                  "Productivity & hours",
+                  "Supports efficient people processes."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Bilingual.",
+                "AEC HR experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Talent Acquisition / Recruiter",
+          "meta": "Department: People & Culture (HR) · Reports to: People & Culture Director · Levels: Mid (L2).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Sources and hires the MEP/BIM talent that fuels the company's growth across the US–Colombia model."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Source, screen and coordinate hiring across roles and lines.",
+                "Run interview processes using the role scorecards and leveling.",
+                "Build talent pipelines and employer brand.",
+                "Support onboarding hand-off."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Recruiting fundamentals; technical-role sourcing."
+                ],
+                [
+                  "Software & tools",
+                  "ATS, LinkedIn, sourcing tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English; candidate-facing."
+                ],
+                [
+                  "Autonomy",
+                  "Works with light oversight."
+                ],
+                [
+                  "Productivity & hours",
+                  "Hires efficiently to plan."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Technical/AEC recruiting.",
+                "Bi-national hiring experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Training & Development Lead",
+          "meta": "Department: People & Culture (HR) · Reports to: People & Culture Director · Levels: Lead (L4).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns the competency framework, onboarding and continuous training — turning the leveling model into real capability growth."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own onboarding and the training curriculum by role/level.",
+                "Operationalize the leveling framework into development plans.",
+                "Run technical & English upskilling programs.",
+                "Measure capability growth and readiness for promotion."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Learning & development expertise; understands the technical roles."
+                ],
+                [
+                  "Software & tools",
+                  "LMS, content tools, the company software stack (to teach it)."
+                ],
+                [
+                  "English",
+                  "Fluent; may run English-development programs."
+                ],
+                [
+                  "Autonomy",
+                  "Runs L&D independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Drives productivity through capability."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC/technical training.",
+                "Instructional design."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Administration Manager",
+          "meta": "Department: Administration · Reports to: General Manager / COO · Levels: Manager (L5).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Runs office operations, documentation, procurement and support logistics across the company."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own office operations, documentation and procurement.",
+                "Manage support logistics and vendors.",
+                "Lead administrative staff.",
+                "Support compliance and record-keeping (with local counsel)."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Operations/administration management."
+                ],
+                [
+                  "Software & tools",
+                  "Office/ERP, documentation and procurement tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English."
+                ],
+                [
+                  "Autonomy",
+                  "Runs administration independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns admin efficiency and cost."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC office operations.",
+                "Bi-national operations."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Administrative Assistant",
+          "meta": "Department: Administration · Reports to: Administration Manager · Levels: Junior (L1).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Reception, documentation and administrative support that keeps the office running."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Provide reception, scheduling and documentation support.",
+                "Maintain records and administrative processes.",
+                "Support procurement and logistics tasks."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Administrative fundamentals."
+                ],
+                [
+                  "Software & tools",
+                  "Office suite, documentation tools."
+                ],
+                [
+                  "English",
+                  "Reads/understands English; growing written English."
+                ],
+                [
+                  "Autonomy",
+                  "Supervised."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works reliably to tasks/time."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Bilingual.",
+                "Office admin experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Work model per policy: L1–L2 primarily on-site, L3 up to one fixed remote day. Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Finance & Accounting Manager",
+          "meta": "Department: Finance & Accounting · Reports to: General Manager / COO · Levels: Manager (L5).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns accounting, AP/AR, billing and financial reporting for the company."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own accounting, AP/AR, billing and reporting.",
+                "Support budgeting, cash flow and financial controls.",
+                "Lead accounting staff.",
+                "Partner with leadership on financial performance (with local counsel on tax/jurisdiction)."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Accounting/finance management; controls."
+                ],
+                [
+                  "Software & tools",
+                  "Accounting/ERP systems, Excel, reporting tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English."
+                ],
+                [
+                  "Autonomy",
+                  "Runs finance independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns financial reporting and controls."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "US/Colombia accounting.",
+                "AEC finance."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Accountant / AP-AR",
+          "meta": "Department: Finance & Accounting · Reports to: Finance & Accounting Manager · Levels: Mid (L2).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Processes payables/receivables and supports financial reporting."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Process AP/AR and reconciliations.",
+                "Support billing and reporting.",
+                "Maintain accurate financial records."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Accounting fundamentals; AP/AR."
+                ],
+                [
+                  "Software & tools",
+                  "Accounting software, Excel."
+                ],
+                [
+                  "English",
+                  "Reads/writes English for correspondence."
+                ],
+                [
+                  "Autonomy",
+                  "Works with light oversight."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works accurately to time."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Bilingual.",
+                "AEC billing experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Business Development & Marketing Lead",
+          "meta": "Department: Business Development & Marketing · Reports to: General Manager / COO · Levels: Manager / Lead (L5).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns growth — the sales pipeline plus the distinct brand voice of each line (VDC Lab, MEPHub, Permit My House)."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own the sales pipeline, proposals and client acquisition.",
+                "Own each line's distinct brand voice and marketing.",
+                "Lead commercial/sales, brand and social team members.",
+                "Partner with Directors on growth targets."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "BD/marketing strategy; AEC market understanding."
+                ],
+                [
+                  "Software & tools",
+                  "CRM, marketing/analytics and content tools."
+                ],
+                [
+                  "English",
+                  "Full professional fluency; client-facing."
+                ],
+                [
+                  "Autonomy",
+                  "Runs growth independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns pipeline efficiency and growth."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC business development.",
+                "Brand strategy."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Commercial / Sales",
+          "meta": "Department: Business Development & Marketing · Reports to: Business Development & Marketing Lead · Levels: Senior (L3).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Drives pipeline, proposals and client acquisition for the ecosystem."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Build pipeline and pursue opportunities across lines.",
+                "Prepare proposals and support closing.",
+                "Maintain CRM and client relationships."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Sales/BD fundamentals; AEC services."
+                ],
+                [
+                  "Software & tools",
+                  "CRM, proposal tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English; client-facing."
+                ],
+                [
+                  "Autonomy",
+                  "Works independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Drives pipeline to target."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC sales.",
+                "U.S. market network."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Brand / Marketing",
+          "meta": "Department: Business Development & Marketing · Reports to: Business Development & Marketing Lead · Levels: Senior (L3).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Protects the distinct front-of-house voice of each line and runs marketing."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Own brand voice and marketing assets per line.",
+                "Run campaigns and content.",
+                "Support proposals and web/social presence."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Brand/marketing craft."
+                ],
+                [
+                  "Software & tools",
+                  "Design/marketing and analytics tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English (US market)."
+                ],
+                [
+                  "Autonomy",
+                  "Works independently."
+                ],
+                [
+                  "Productivity & hours",
+                  "Runs marketing to plan."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "Multi-brand experience.",
+                "AEC marketing."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Shared",
+          "title": "Social Media Manager",
+          "meta": "Department: Business Development & Marketing · Reports to: Business Development & Marketing Lead · Levels: Mid (L2).",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Runs content and channels across the ecosystem."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Plan and publish content across channels.",
+                "Grow engagement and track performance.",
+                "Support brand and campaigns."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Social/content fundamentals."
+                ],
+                [
+                  "Software & tools",
+                  "Social, scheduling and analytics tools."
+                ],
+                [
+                  "English",
+                  "Fluent in English (US audience)."
+                ],
+                [
+                  "Autonomy",
+                  "Works with light oversight."
+                ],
+                [
+                  "Productivity & hours",
+                  "Works to content plan."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "US-market social experience."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exec",
+      "label": "Executive",
+      "roles": [
+        {
+          "line": "Executive",
+          "title": "Chief Executive Officer (CEO)",
+          "meta": "Department: Executive · Reports to: Ownership / Board · Levels: Executive.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Owns company strategy, capital, growth and the highest-level relationships for MS Systems."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Set company vision, strategy and capital allocation.",
+                "Own growth and the enterprise as a whole.",
+                "Build the executive team and own succession.",
+                "Own top client/partner/market and ownership relationships."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Sets the company's technical/market vision."
+                ],
+                [
+                  "Software & tools",
+                  "Owns the technology & data strategy at company level."
+                ],
+                [
+                  "English",
+                  "The company's voice — clients, partners, market, ownership."
+                ],
+                [
+                  "Autonomy",
+                  "Ultimate decision authority."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns overall financial health, growth and capital allocation."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC/technology-services leadership."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        },
+        {
+          "line": "Executive",
+          "title": "General Manager / COO",
+          "meta": "Department: Executive · Reports to: CEO · Levels: Executive.",
+          "sections": [
+            {
+              "title": "Purpose",
+              "paragraphs": [
+                "Runs the company day to day; aligns the three lines and shared functions; accountable for overall operational performance."
+              ],
+              "bullets": [],
+              "pairs": []
+            },
+            {
+              "title": "Key responsibilities",
+              "paragraphs": [],
+              "bullets": [
+                "Run company operations; align the three lines and shared functions.",
+                "Own company-wide delivery quality and operational excellence.",
+                "Lead the Directors and the leadership team; own culture and performance.",
+                "Own company-wide utilization, margin and efficiency — the operational guardian of profitability."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Required competencies",
+              "paragraphs": [],
+              "bullets": [],
+              "pairs": [
+                [
+                  "Technical",
+                  "Strong grasp of the whole delivery model."
+                ],
+                [
+                  "Software & tools",
+                  "Fluent in the business tools — dashboards, financials, capacity, pipeline."
+                ],
+                [
+                  "English",
+                  "Executive fluency; represents the company externally."
+                ],
+                [
+                  "Autonomy",
+                  "Full authority over company operations."
+                ],
+                [
+                  "Productivity & hours",
+                  "Owns company-wide utilization, margin and efficiency."
+                ]
+              ]
+            },
+            {
+              "title": "Nice to have",
+              "paragraphs": [],
+              "bullets": [
+                "AEC operations leadership.",
+                "Bi-national operations."
+              ],
+              "pairs": []
+            },
+            {
+              "title": "Location & work model",
+              "paragraphs": [
+                "Colombia or U.S. per position. Hybrid / flexible per policy (L4+). Employment terms confirmed with local counsel."
+              ],
+              "bullets": [],
+              "pairs": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ladder": {
+    "title": "MS Systems — Career Growth Ladder",
+    "intro": "How people grow here. Each band has internal steps so progress is recognized often — a small, earned promotion, not automatic tenure. At Senior the path forks: keep growing technically toward Lead, or move into delivery as a Project Manager. It's the path you choose — both are valued and paid the same at each level.",
+    "legend": [
+      "Public title = band",
+      "Step is internal (Senior II)",
+      "Reviewed twice a year"
+    ],
+    "tracks": {
+      "technical": "Technical / production track",
+      "delivery": "Delivery / project management track"
+    },
+    "items": [
+      {
+        "type": "band",
+        "code": "EXEC",
+        "name": "Executive",
+        "steps": [
+          {
+            "name": "GM / COO",
+            "text": "Runs the company day to day; aligns the lines & shared functions."
+          },
+          {
+            "name": "CEO",
+            "text": "Owns strategy, capital, growth & the top relationships."
+          }
+        ],
+        "notes": [],
+        "track": null
+      },
+      {
+        "type": "band",
+        "code": "L6",
+        "name": "Director",
+        "steps": [
+          {
+            "name": "Director I",
+            "text": "Owns a whole line or major function — its people, quality, growth & P&L.",
+            "next": "Larger / multi-line domain"
+          },
+          {
+            "name": "Director II",
+            "text": "Owns a larger multi-line domain or the most strategic function.",
+            "next": "Executive"
+          }
+        ],
+        "notes": [
+          "Both paths converge here."
+        ],
+        "track": null
+      },
+      {
+        "type": "converge",
+        "text": "▲ both tracks lead up to Director ▲"
+      },
+      {
+        "type": "band",
+        "code": "L5",
+        "name": "Discipline Manager",
+        "steps": [
+          {
+            "name": "Manager I",
+            "text": "Owns one discipline — its people, capacity, standards & margin.",
+            "next": "Larger / multi-pod scope"
+          },
+          {
+            "name": "Manager II",
+            "text": "Runs a larger / multi-pod discipline at scale; develops Leads.",
+            "next": "Director"
+          }
+        ],
+        "notes": [
+          "Deep-technical alternative: Principal / Specialist — same level, no people-management."
+        ],
+        "track": "technical"
+      },
+      {
+        "type": "band",
+        "code": "L4",
+        "name": "Lead",
+        "steps": [
+          {
+            "name": "Lead I",
+            "text": "Technical authority for a pod; reviews & signs off, sets standards, mentors.",
+            "next": "Owns craft across pods"
+          },
+          {
+            "name": "Lead II",
+            "text": "Owns the craft & standards across pods / a discipline; grooms future leads.",
+            "next": "Discipline Manager or Principal"
+          }
+        ],
+        "notes": [],
+        "track": "technical"
+      },
+      {
+        "type": "band",
+        "code": "L5",
+        "name": "Senior Project Manager",
+        "steps": [
+          {
+            "name": "Senior PM",
+            "text": "Owns the largest / most complex or multi-line projects & key accounts.",
+            "next": "Director / PMO"
+          }
+        ],
+        "notes": [],
+        "track": "delivery"
+      },
+      {
+        "type": "band",
+        "code": "L5",
+        "name": "Project Manager",
+        "steps": [
+          {
+            "name": "Project Manager",
+            "text": "Owns projects end-to-end — scope, schedule, budget, client, coordination, invoicing & change orders.",
+            "next": "Senior Project Manager"
+          }
+        ],
+        "notes": [],
+        "track": "delivery"
+      },
+      {
+        "type": "note",
+        "text": "Fork at Senior (L3). From Senior you pick your track — Lead (own the craft, quality & delivery of a pod → Discipline Manager or Principal) or Project Manager (own projects end-to-end → Senior PM). Same level, same pay band; switch tracks later by agreement."
+      },
+      {
+        "type": "band",
+        "code": "L3",
+        "name": "Senior",
+        "steps": [
+          {
+            "name": "Senior I",
+            "text": "Owns complex deliverables end-to-end, unsupervised; mentors juniors.",
+            "next": "Deeper mastery"
+          },
+          {
+            "name": "Senior II",
+            "text": "A recognized expert; trusted on the hardest work; sets local best practice.",
+            "next": "Technical go-to"
+          },
+          {
+            "name": "Senior III",
+            "text": "The department's technical go-to; drives quality & standards; understands the project budget.",
+            "next": "Choose a path — Lead or PM"
+          }
+        ],
+        "notes": [],
+        "track": null
+      },
+      {
+        "type": "band",
+        "code": "L2",
+        "name": "Mid",
+        "steps": [
+          {
+            "name": "Mid I",
+            "text": "Handles standard deliverables end-to-end with light oversight.",
+            "next": "Broader scope"
+          },
+          {
+            "name": "Mid II",
+            "text": "Well-rounded; anticipates coordination; minimal review on standard work.",
+            "next": "Complex scope"
+          },
+          {
+            "name": "Mid III",
+            "text": "Takes on complex / non-standard tasks; a quality reference for juniors.",
+            "next": "Senior"
+          }
+        ],
+        "notes": [],
+        "track": null
+      },
+      {
+        "type": "band",
+        "code": "L1",
+        "name": "Junior",
+        "steps": [
+          {
+            "name": "Junior I",
+            "text": "Onboarding: learns standards & core software; fully supervised.",
+            "next": "Routine tasks, light review"
+          },
+          {
+            "name": "Junior II",
+            "text": "Completes routine, well-defined tasks with light review.",
+            "next": "Independent on routine"
+          },
+          {
+            "name": "Junior III",
+            "text": "Delivers routine packages independently; consistent quality on standard scope.",
+            "next": "Mid"
+          }
+        ],
+        "notes": [],
+        "track": null
+      }
+    ],
+    "footnote": "Steps are a leveling & compensation layer — they live in HR records and reviews, not on the org chart or client deliverables. Lead (L4) and Project Manager / Discipline Manager (L5) are paid on the same bands per the compensation structure. Pay figures are set per the company pay bands and confirmed with local counsel."
+  },
+  "sizing": {
+    "intro": "Set the span-of-control ratios and the producer demand per discipline. The management layers — Leads, Discipline Managers, Directors, QA/QC and PMs — size themselves. Watch the direct-to-overhead ratio to keep it lean.",
+    "ratios": {
+      "perLead": 5,
+      "leadsPerManager": 7,
+      "managersPerDirector": 5,
+      "perReviewer": 15,
+      "perPm": 12,
+      "backOffice": 16
+    },
+    "lines": [
+      {
+        "line": "VDC Lab",
+        "key": "vdc",
+        "disciplines": [
+          {
+            "name": "Mechanical",
+            "producers": 25
+          },
+          {
+            "name": "Plumbing",
+            "producers": 14
+          },
+          {
+            "name": "Electrical",
+            "producers": 9
+          },
+          {
+            "name": "Sprinkler / FP",
+            "producers": 5
+          },
+          {
+            "name": "BIM Coordination",
+            "producers": 6
+          }
+        ]
+      },
+      {
+        "line": "MEPHub",
+        "key": "mephub",
+        "disciplines": [
+          {
+            "name": "Mechanical Eng.",
+            "producers": 5
+          },
+          {
+            "name": "Electrical Eng.",
+            "producers": 4
+          },
+          {
+            "name": "Plumbing Eng.",
+            "producers": 2
+          },
+          {
+            "name": "FP Eng.",
+            "producers": 1
+          }
+        ]
+      },
+      {
+        "line": "Permit My House",
+        "key": "pmh",
+        "disciplines": [
+          {
+            "name": "Permit Design",
+            "producers": 5
+          }
+        ]
+      }
+    ]
+  },
+  "scorecard": {
+    "intro": "Built on the Leveling Model. Promotion mode rates against a chosen step; hiring mode reads the level from the ratings.",
+    "dims": [
+      "Technical mastery",
+      "Software & tools",
+      "Autonomy",
+      "Scope & complexity",
+      "Quality & standards",
+      "Communication & English",
+      "Leadership & mentoring",
+      "Productivity & Hours Discipline"
+    ],
+    "steps": [
+      {
+        "label": "Junior I",
+        "level": "Junior",
+        "code": "L1",
+        "next": "Junior II",
+        "exp": [
+          "Learning the fundamentals of your assigned department and its typical details & standards",
+          "Being introduced to the company's software stack (Revit, AutoCAD, Navisworks, Forma, point-cloud tools and the apps your discipline uses); follows guided steps and asks questions often as new tasks come up",
+          "All work supervised and checked",
+          "Assists on small, well-defined tasks (redlines, model updates, simple sheets)",
+          "Frequent corrections; learning what “good” looks like",
+          "Reads and understands English documents, standards, drawings and instructions — reading comprehension is the hiring gate. Produces basic document-facing English (plan notes, keynotes) with AI assistance.",
+          "Responsible for own onboarding & learning",
+          "Logs time accurately by task/phase; learns that every task carries an estimate"
+        ]
+      },
+      {
+        "label": "Junior II",
+        "level": "Junior",
+        "code": "L1",
+        "next": "Junior III",
+        "exp": [
+          "Solid on the fundamentals of your department; recognizes common issues",
+          "Comfortable with the everyday commands of the core tools; completes routine tasks with occasional help and knows who to ask when something new comes up",
+          "Supervised; needs less day-to-day direction on routine work",
+          "Completes routine, well-defined tasks",
+          "Fewer corrections; uses checklists consistently",
+          "Reads English project documents and markups comfortably; writes simple notes and annotations on deliverables (AI-assisted).",
+          "Reliable teammate",
+          "Knows the hours budgeted for their work; flags early when running long; steadily faster"
+        ]
+      },
+      {
+        "label": "Junior III",
+        "level": "Junior",
+        "code": "L1",
+        "next": "Mid I",
+        "exp": [
+          "Proficient on routine work within your department",
+          "Uses the core tools on standard work without step-by-step help; needs guidance only on unfamiliar features and starts to look things up on their own",
+          "Reduced supervision on routine work — but does not release work; a Lead / reviewer checks and signs off",
+          "Owns routine packages end-to-end",
+          "Consistent quality on standard scope",
+          "Understands all project documents; writes clear, correct annotations and keynotes on deliverables (AI assistance as needed). No spoken-English requirement.",
+          "May help onboard newer juniors informally",
+          "Consistently delivers routine tasks within the estimated hours; proactively raises overrun risk"
+        ]
+      },
+      {
+        "label": "Mid I",
+        "level": "Mid",
+        "code": "L2",
+        "next": "Mid II",
+        "exp": [
+          "Proficient in your department / assignment; steadily building depth",
+          "Works at a steady, reliable pace in the tools your role uses day to day; handles standard tasks on their own with only occasional questions",
+          "Light supervision on standard work; everything is reviewed before it goes out",
+          "Owns standard deliverables end-to-end (full sheets, system layouts)",
+          "Consistent quality on standard work; self-checks against standards/checklists",
+          "Strong reading comprehension; writes notes, keynotes and annotations on deliverables independently. Starts to listen in on English meetings and conversations as an observer (“ghosting”) — no speaking required.",
+          "Reliable teammate; answers juniors' basic questions",
+          "Reliably delivers standard work within the hours set for it; logs time cleanly without reminders"
+        ]
+      },
+      {
+        "label": "Mid II",
+        "level": "Mid",
+        "code": "L2",
+        "next": "Mid III",
+        "exp": [
+          "Well-rounded, dependable proficiency in your department; handles typical coordination",
+          "Fast and clean across the full set of tools your work requires; troubleshoots the common problems without help and escalates only the unusual ones",
+          "Minimal supervision on standard deliverables; makes routine decisions — work is still checked before release",
+          "Handles larger or more complex tasks in your department's scope; anticipates coordination issues",
+          "Rework is rare; catches own errors before review; applies standards unprompted",
+          "Precise, professional written English on deliverables (notes, keynotes, RFIs, emails); AI as a tool, not a crutch. Regularly sits in on English meetings and follows the discussion; may offer a few words when comfortable.",
+          "Informally guides juniors on tasks; reviews simple work",
+          "Manages own time across a full deliverable to hit a budget others set for it; flags scope creep early with a proposed fix"
+        ]
+      },
+      {
+        "label": "Mid III",
+        "level": "Mid",
+        "code": "L2",
+        "next": "Senior I",
+        "exp": [
+          "Deep, reliable proficiency in your department; handles non-standard details; ready to go deep (Senior)",
+          "Proficient and self-sufficient — solves most software problems they run into on their own and rarely needs help. This is the target software level for a fully-fledged designer / drafter",
+          "Largely independent producing standard work, but not yet authorized to send work out — release remains the Lead's responsibility",
+          "Takes on complex / non-standard scope with guidance; contributes to project setup",
+          "A quality reference for juniors; spots issues in others' work; suggests standard improvements",
+          "Reliable, polished document-facing English across all standard work. Attends English meetings comfortably and occasionally responds — still no requirement to speak or lead.",
+          "A go-to peer; mentors juniors, helps onboard; may lead a small task",
+          "Holds the budget on harder work; works to the hours set by Estimating and flags early when a task runs long; starts to see how their piece fits the overall project budget, not just their own hours"
+        ]
+      },
+      {
+        "label": "Senior I",
+        "level": "Senior",
+        "code": "L3",
+        "next": "Senior II",
+        "exp": [
+          "Deep, dependable proficiency in your department; owns complex work confidently",
+          "Expert user — deep command of the tools and highly efficient; improves their own workflow and helps teammates when they get stuck",
+          "Produces complex work with little supervision; still routed through the Lead for release",
+          "Owns complex, non-standard deliverables end-to-end",
+          "Sets the quality bar by example; catches issues others miss",
+          "Deep comprehension; writes clean, professional English on deliverables and in written client correspondence (emails, RFIs) when needed. An active listener on client / technical calls who speaks up on familiar points.",
+          "Actively mentors juniors & mids; a trusted informal leader",
+          "Delivers complex work within the hours set by the Estimating team; crucially, understands the project budget behind those hours — not just their own tasks. (Estimating owns the numbers; the Senior works to them.)"
+        ]
+      },
+      {
+        "label": "Senior II",
+        "level": "Senior",
+        "code": "L3",
+        "next": "Senior III",
+        "exp": [
+          "Recognized expert in your department; solves the hardest technical problems",
+          "Solves the hard, non-standard software problems for the team; sets up and improves the shared ways of working in the tools and shows others how",
+          "The Lead may trust them to deliver — including to clients — as a judgement call; the Lead remains accountable",
+          "Takes on the most difficult scope; when required, searches out or collaborates with contributors to approach complex problems",
+          "Reviews others' work; defines local best practice & checklists",
+          "Top of the written / document track: handles all written client communication confidently and participates in spoken English (contributes and answers questions in meetings and calls) — but is not yet required to lead a discussion. The highest level reachable without client-ready spoken leadership.",
+          "Coaches the pod; may lead a small team or workstream",
+          "Reliably protects the budget on complex work; when asked, gives the Estimating team technical input on complex or non-standard scope, and flags out-of-scope / extra work early to the PM as a potential change order"
+        ]
+      },
+      {
+        "label": "Senior III",
+        "level": "Senior",
+        "code": "L3",
+        "next": "Lead I",
+        "exp": [
+          "The technical reference for your department; shapes how the work is done",
+          "The person the team turns to when they're stuck in the software — the recognized software reference for the discipline. You get here by consistently solving problems others can't, sharing what you learn, and picking up new or adjacent tools as projects require",
+          "Consistently produces work at the quality needed to go out the door; the natural bridge to Lead, who gives the final approval to issue any deliverable — drawings, models, calculations or coordination, across VDC Lab and MEPHub",
+          "Shapes the approach for complex projects; contributes to scoping & planning",
+          "Owns the department's quality standards in practice; drives continuous improvement",
+          "English gate: to advance past Senior II — on any track, no exceptions — you must be able to hold and lead a technical discussion in spoken English with clients and partners. Every level above (Lead, PM, DM, Director) requires it. Represents the department credibly with clients, on calls and in writing.",
+          "Develops future seniors / leads; a role model for the department",
+          "A trusted technical sounding board for Estimating on the hardest scope; connects scope, hours and margin across projects and heads off overruns before they land — helping protect the department's profitability, while Estimating still owns the estimate"
+        ]
+      },
+      {
+        "label": "Lead I",
+        "level": "Lead",
+        "code": "L4",
+        "next": "Lead II",
+        "exp": [
+          "The technical authority for your pod; deep, broad proficiency — the person others come to",
+          "Mastery of the tools your pod requires; sets the pod's tool standards & workflows; brings in new tools when useful",
+          "Owns release for the pod — the final approval to issue any deliverable (drawings, models, calcs or coordination) and accountable for what ships. Makes the technical calls; escalates only cross-discipline / business issues",
+          "Owns the hardest technical scope in the pod; guides how complex work is approached",
+          "Owns QA/QC for the pod's output; reviews and approves work for release; sets the standards & checklists",
+          "Leads coordination calls and client / external technical discussions in English — fully client-capable.",
+          "Leads and develops the pod; reviews work, coaches, sets expectations (with or without formal reports)",
+          "Builds and defends the pod's production budget against the Estimating team's estimate; ties hours to the project fee and its invoicing milestones; raises change orders with the PM when scope grows"
+        ]
+      },
+      {
+        "label": "Lead II",
+        "level": "Lead",
+        "code": "L4",
+        "next": "Discipline Manager",
+        "exp": [
+          "Owns the craft across multiple pods / the whole discipline; sets the technical direction",
+          "The department's tooling authority; owns standards, drives automation & new-tool adoption where it helps, and levels up the team",
+          "Sets direction for the discipline's technical approach; trusted with ambiguity",
+          "Shapes approach across projects; plans the discipline's work; solves the toughest problems",
+          "Owns quality standards for the discipline; partners with the shared QA/QC team on continuous improvement",
+          "A trusted technical voice in English with clients & partners; represents the discipline.",
+          "Grows future leads; a people & craft leader — the fork: management (Discipline Manager) or technical (Principal)",
+          "Owns the pod / discipline's utilization & margin; manages change orders and keeps the pod's work aligned to what has been billed"
+        ]
+      },
+      {
+        "label": "Project Manager",
+        "level": "Project Manager",
+        "code": "L5",
+        "next": "Senior Project Manager",
+        "exp": [
+          "Solid MEP / project fundamentals — enough to plan the work, judge effort and spot risk across disciplines",
+          "Fluent in the PM toolset (project tracking, schedules, dashboards); reads models & drawings (Navisworks / Autodesk Forma / point clouds) to track progress",
+          "Runs their projects independently; escalates cross-line or commercial issues to the PMO / line",
+          "Owns standard-to-mid projects end-to-end — scope, schedule, budget, client, coordination",
+          "Ensures deliverables meet scope & standards; runs QA/QC gates with the discipline and QA/QC teams",
+          "Owns the client relationship day-to-day — leads meetings, written & verbal, in fluent English",
+          "Leads project teams (matrixed) without owning their careers; sets direction, coordinates, motivates",
+          "Owns the project's commercials end-to-end — budget, hours, invoicing, receivables & change orders; plans to the fee, tracks burn and protects margin"
+        ]
+      },
+      {
+        "label": "Senior Project Manager",
+        "level": "Project Manager",
+        "code": "L5",
+        "next": "Director I",
+        "exp": [
+          "Broad cross-discipline understanding; anticipates technical risk on the most complex projects",
+          "Optimizes the PM toolchain; uses data & dashboards to manage portfolio health",
+          "Owns the hardest projects & accounts with full autonomy; a trusted decision-maker",
+          "Owns the largest, most complex or multi-line projects & key accounts",
+          "Drives delivery-process improvements; a model for how projects are run",
+          "Trusted senior point of contact for key clients & partners; handles escalations",
+          "Mentors other PMs; helps set PM standards; may guide a portfolio",
+          "Owns profitability across a portfolio; sets the standard for how budgets, change orders and billing are run"
+        ]
+      },
+      {
+        "label": "Discipline Manager",
+        "level": "Discipline Manager",
+        "code": "L5",
+        "next": "Senior Discipline Manager",
+        "exp": [
+          "Strong technical judgment across the discipline; sets and upholds standards (no longer the hands-on tool peak — that lives with the Lead / Principal)",
+          "Fluent enough to set standards and judge quality; owns the discipline's tool standards with the Leads",
+          "Runs the discipline independently; escalates only cross-line or strategic issues",
+          "Owns one discipline — its pods, leads and producers; balances capacity across projects",
+          "Accountable for the discipline's quality; owns standards & the QA/QC partnership; the final technical backstop",
+          "Fluent, client- and partner-capable; represents the discipline internally and externally",
+          "Manages the discipline's people — hiring, development, performance, careers; grows Leads and Seniors",
+          "Owns the discipline's utilization & capacity — staffs to demand, protects margin through the right mix and sound estimates"
+        ]
+      },
+      {
+        "label": "Senior Discipline Manager",
+        "level": "Discipline Manager",
+        "code": "L5",
+        "next": "Director I",
+        "exp": [
+          "Recognized authority for the discipline's technical direction across the company",
+          "Drives the discipline's tooling & automation strategy; invests in capability",
+          "Owns discipline strategy; a trusted decision-maker at the line level",
+          "Owns a larger / multi-pod discipline at scale; shapes how the discipline grows",
+          "Drives continuous improvement; makes the discipline's quality a competitive strength",
+          "A senior voice with clients, partners and leadership",
+          "Builds the leadership bench (future Leads / DMs); a culture-carrier for the discipline",
+          "Owns the discipline's overall profitability & efficiency; sets the productivity bar"
+        ]
+      },
+      {
+        "label": "Director I",
+        "level": "Director",
+        "code": "L6",
+        "next": "Director II",
+        "exp": [
+          "Sets technical direction and standards for the line; relies on DMs / Leads for depth (no longer personally hands-on)",
+          "Owns the line's tooling & technology strategy and investment; fluent in the business tools (dashboards, financials, capacity)",
+          "Runs the line independently against goals; escalates only company-level strategy / capital",
+          "Owns a whole service line or major function — multiple disciplines, its people and P&L-style performance",
+          "Accountable for the line's overall quality & delivery reputation; owns the standards system",
+          "Full professional fluency; owns top client & partner relationships; represents the line externally",
+          "Builds and leads the line's leadership team (DMs, PMs, Leads); owns culture, senior hiring and succession",
+          "Owns the line's P&L-style performance — utilization, margin, growth; sets targets and holds the line to them"
+        ]
+      },
+      {
+        "label": "Director II",
+        "level": "Director",
+        "code": "L6",
+        "next": "General Manager / COO",
+        "exp": [
+          "Shapes the company's technical strategy and its reputation in the market",
+          "Drives technology / innovation strategy across the line; sponsors automation & new capability",
+          "A strategic leader; sets direction alongside the executive team",
+          "Owns a larger / multi-line domain or the most strategic function",
+          "Makes quality & delivery excellence a market differentiator for the line",
+          "A trusted executive-level voice with major clients, partners and the market",
+          "Develops future directors; a senior culture and talent leader for the company",
+          "Owns the line's financial strategy & sustainable profitability at scale"
+        ]
+      },
+      {
+        "label": "General Manager / COO",
+        "level": "Executive",
+        "code": "EXEC",
+        "next": "CEO",
+        "exp": [
+          "Strong grasp of the whole delivery model; enough technical fluency to steer priorities and judge risk company-wide",
+          "Fluent in the business tools — company dashboards, financials, capacity, pipeline",
+          "Full authority over company operations; accountable to the CEO / ownership",
+          "Owns the whole company's operations — all three lines and the shared functions",
+          "Owns company-wide delivery quality & operational excellence",
+          "Executive fluency; represents the company with major clients, partners and the team",
+          "Leads the Directors and the leadership team; owns company culture and performance",
+          "Owns company-wide utilization, margin and efficiency; the operational guardian of profitability"
+        ]
+      },
+      {
+        "label": "CEO",
+        "level": "Executive",
+        "code": "EXEC",
+        "next": null,
+        "exp": [
+          "Sets the company's technical / market vision; not involved in delivery detail",
+          "Owns the technology & data strategy at company level; sponsors major investments",
+          "Ultimate decision authority; accountable to ownership and the market",
+          "Owns company strategy, capital, growth and the enterprise as a whole",
+          "Owns the company's reputation and standards as a brand promise",
+          "The company's voice — clients, partners, market and ownership",
+          "Sets vision and culture; builds the executive team; owns succession",
+          "Owns overall financial health, growth and capital allocation"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "level": "Junior",
+        "code": "L1",
+        "idx": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "level": "Mid",
+        "code": "L2",
+        "idx": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "level": "Senior",
+        "code": "L3",
+        "idx": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "level": "Lead",
+        "code": "L4",
+        "idx": [
+          9,
+          10
+        ]
+      },
+      {
+        "level": "Project Manager",
+        "code": "L5",
+        "idx": [
+          11,
+          12
+        ]
+      },
+      {
+        "level": "Discipline Manager",
+        "code": "L5",
+        "idx": [
+          13,
+          14
+        ]
+      },
+      {
+        "level": "Director",
+        "code": "L6",
+        "idx": [
+          15,
+          16
+        ]
+      },
+      {
+        "level": "Executive",
+        "code": "EXEC",
+        "idx": [
+          17,
+          18
+        ]
+      }
+    ],
+    "spine": [
+      {
+        "label": "Junior I",
+        "level": "Junior",
+        "code": "L1",
+        "exp": [
+          "Learning the fundamentals of your assigned department and its typical details & standards",
+          "Being introduced to the company's software stack (Revit, AutoCAD, Navisworks, Forma, point-cloud tools and the apps your discipline uses); follows guided steps and asks questions often as new tasks come up",
+          "All work supervised and checked",
+          "Assists on small, well-defined tasks (redlines, model updates, simple sheets)",
+          "Frequent corrections; learning what “good” looks like",
+          "Reads and understands English documents, standards, drawings and instructions — reading comprehension is the hiring gate. Produces basic document-facing English (plan notes, keynotes) with AI assistance.",
+          "Responsible for own onboarding & learning",
+          "Logs time accurately by task/phase; learns that every task carries an estimate"
+        ]
+      },
+      {
+        "label": "Junior II",
+        "level": "Junior",
+        "code": "L1",
+        "exp": [
+          "Solid on the fundamentals of your department; recognizes common issues",
+          "Comfortable with the everyday commands of the core tools; completes routine tasks with occasional help and knows who to ask when something new comes up",
+          "Supervised; needs less day-to-day direction on routine work",
+          "Completes routine, well-defined tasks",
+          "Fewer corrections; uses checklists consistently",
+          "Reads English project documents and markups comfortably; writes simple notes and annotations on deliverables (AI-assisted).",
+          "Reliable teammate",
+          "Knows the hours budgeted for their work; flags early when running long; steadily faster"
+        ]
+      },
+      {
+        "label": "Junior III",
+        "level": "Junior",
+        "code": "L1",
+        "exp": [
+          "Proficient on routine work within your department",
+          "Uses the core tools on standard work without step-by-step help; needs guidance only on unfamiliar features and starts to look things up on their own",
+          "Reduced supervision on routine work — but does not release work; a Lead / reviewer checks and signs off",
+          "Owns routine packages end-to-end",
+          "Consistent quality on standard scope",
+          "Understands all project documents; writes clear, correct annotations and keynotes on deliverables (AI assistance as needed). No spoken-English requirement.",
+          "May help onboard newer juniors informally",
+          "Consistently delivers routine tasks within the estimated hours; proactively raises overrun risk"
+        ]
+      },
+      {
+        "label": "Mid I",
+        "level": "Mid",
+        "code": "L2",
+        "exp": [
+          "Proficient in your department / assignment; steadily building depth",
+          "Works at a steady, reliable pace in the tools your role uses day to day; handles standard tasks on their own with only occasional questions",
+          "Light supervision on standard work; everything is reviewed before it goes out",
+          "Owns standard deliverables end-to-end (full sheets, system layouts)",
+          "Consistent quality on standard work; self-checks against standards/checklists",
+          "Strong reading comprehension; writes notes, keynotes and annotations on deliverables independently. Starts to listen in on English meetings and conversations as an observer (“ghosting”) — no speaking required.",
+          "Reliable teammate; answers juniors' basic questions",
+          "Reliably delivers standard work within the hours set for it; logs time cleanly without reminders"
+        ]
+      },
+      {
+        "label": "Mid II",
+        "level": "Mid",
+        "code": "L2",
+        "exp": [
+          "Well-rounded, dependable proficiency in your department; handles typical coordination",
+          "Fast and clean across the full set of tools your work requires; troubleshoots the common problems without help and escalates only the unusual ones",
+          "Minimal supervision on standard deliverables; makes routine decisions — work is still checked before release",
+          "Handles larger or more complex tasks in your department's scope; anticipates coordination issues",
+          "Rework is rare; catches own errors before review; applies standards unprompted",
+          "Precise, professional written English on deliverables (notes, keynotes, RFIs, emails); AI as a tool, not a crutch. Regularly sits in on English meetings and follows the discussion; may offer a few words when comfortable.",
+          "Informally guides juniors on tasks; reviews simple work",
+          "Manages own time across a full deliverable to hit a budget others set for it; flags scope creep early with a proposed fix"
+        ]
+      },
+      {
+        "label": "Mid III",
+        "level": "Mid",
+        "code": "L2",
+        "exp": [
+          "Deep, reliable proficiency in your department; handles non-standard details; ready to go deep (Senior)",
+          "Proficient and self-sufficient — solves most software problems they run into on their own and rarely needs help. This is the target software level for a fully-fledged designer / drafter",
+          "Largely independent producing standard work, but not yet authorized to send work out — release remains the Lead's responsibility",
+          "Takes on complex / non-standard scope with guidance; contributes to project setup",
+          "A quality reference for juniors; spots issues in others' work; suggests standard improvements",
+          "Reliable, polished document-facing English across all standard work. Attends English meetings comfortably and occasionally responds — still no requirement to speak or lead.",
+          "A go-to peer; mentors juniors, helps onboard; may lead a small task",
+          "Holds the budget on harder work; works to the hours set by Estimating and flags early when a task runs long; starts to see how their piece fits the overall project budget, not just their own hours"
+        ]
+      },
+      {
+        "label": "Senior I",
+        "level": "Senior",
+        "code": "L3",
+        "exp": [
+          "Deep, dependable proficiency in your department; owns complex work confidently",
+          "Expert user — deep command of the tools and highly efficient; improves their own workflow and helps teammates when they get stuck",
+          "Produces complex work with little supervision; still routed through the Lead for release",
+          "Owns complex, non-standard deliverables end-to-end",
+          "Sets the quality bar by example; catches issues others miss",
+          "Deep comprehension; writes clean, professional English on deliverables and in written client correspondence (emails, RFIs) when needed. An active listener on client / technical calls who speaks up on familiar points.",
+          "Actively mentors juniors & mids; a trusted informal leader",
+          "Delivers complex work within the hours set by the Estimating team; crucially, understands the project budget behind those hours — not just their own tasks. (Estimating owns the numbers; the Senior works to them.)"
+        ]
+      },
+      {
+        "label": "Senior II",
+        "level": "Senior",
+        "code": "L3",
+        "exp": [
+          "Recognized expert in your department; solves the hardest technical problems",
+          "Solves the hard, non-standard software problems for the team; sets up and improves the shared ways of working in the tools and shows others how",
+          "The Lead may trust them to deliver — including to clients — as a judgement call; the Lead remains accountable",
+          "Takes on the most difficult scope; when required, searches out or collaborates with contributors to approach complex problems",
+          "Reviews others' work; defines local best practice & checklists",
+          "Top of the written / document track: handles all written client communication confidently and participates in spoken English (contributes and answers questions in meetings and calls) — but is not yet required to lead a discussion. The highest level reachable without client-ready spoken leadership.",
+          "Coaches the pod; may lead a small team or workstream",
+          "Reliably protects the budget on complex work; when asked, gives the Estimating team technical input on complex or non-standard scope, and flags out-of-scope / extra work early to the PM as a potential change order"
+        ]
+      },
+      {
+        "label": "Senior III",
+        "level": "Senior",
+        "code": "L3",
+        "exp": [
+          "The technical reference for your department; shapes how the work is done",
+          "The person the team turns to when they're stuck in the software — the recognized software reference for the discipline. You get here by consistently solving problems others can't, sharing what you learn, and picking up new or adjacent tools as projects require",
+          "Consistently produces work at the quality needed to go out the door; the natural bridge to Lead, who gives the final approval to issue any deliverable — drawings, models, calculations or coordination, across VDC Lab and MEPHub",
+          "Shapes the approach for complex projects; contributes to scoping & planning",
+          "Owns the department's quality standards in practice; drives continuous improvement",
+          "English gate: to advance past Senior II — on any track, no exceptions — you must be able to hold and lead a technical discussion in spoken English with clients and partners. Every level above (Lead, PM, DM, Director) requires it. Represents the department credibly with clients, on calls and in writing.",
+          "Develops future seniors / leads; a role model for the department",
+          "A trusted technical sounding board for Estimating on the hardest scope; connects scope, hours and margin across projects and heads off overruns before they land — helping protect the department's profitability, while Estimating still owns the estimate"
+        ]
+      },
+      {
+        "label": "Lead I",
+        "level": "Lead",
+        "code": "L4",
+        "exp": [
+          "The technical authority for your pod; deep, broad proficiency — the person others come to",
+          "Mastery of the tools your pod requires; sets the pod's tool standards & workflows; brings in new tools when useful",
+          "Owns release for the pod — the final approval to issue any deliverable (drawings, models, calcs or coordination) and accountable for what ships. Makes the technical calls; escalates only cross-discipline / business issues",
+          "Owns the hardest technical scope in the pod; guides how complex work is approached",
+          "Owns QA/QC for the pod's output; reviews and approves work for release; sets the standards & checklists",
+          "Leads coordination calls and client / external technical discussions in English — fully client-capable.",
+          "Leads and develops the pod; reviews work, coaches, sets expectations (with or without formal reports)",
+          "Builds and defends the pod's production budget against the Estimating team's estimate; ties hours to the project fee and its invoicing milestones; raises change orders with the PM when scope grows"
+        ]
+      },
+      {
+        "label": "Lead II",
+        "level": "Lead",
+        "code": "L4",
+        "exp": [
+          "Owns the craft across multiple pods / the whole discipline; sets the technical direction",
+          "The department's tooling authority; owns standards, drives automation & new-tool adoption where it helps, and levels up the team",
+          "Sets direction for the discipline's technical approach; trusted with ambiguity",
+          "Shapes approach across projects; plans the discipline's work; solves the toughest problems",
+          "Owns quality standards for the discipline; partners with the shared QA/QC team on continuous improvement",
+          "A trusted technical voice in English with clients & partners; represents the discipline.",
+          "Grows future leads; a people & craft leader — the fork: management (Discipline Manager) or technical (Principal)",
+          "Owns the pod / discipline's utilization & margin; manages change orders and keeps the pod's work aligned to what has been billed"
+        ]
+      },
+      {
+        "label": "Discipline Manager",
+        "level": "Discipline Manager",
+        "code": "L5",
+        "exp": [
+          "Strong technical judgment across the discipline; sets and upholds standards (no longer the hands-on tool peak — that lives with the Lead / Principal)",
+          "Fluent enough to set standards and judge quality; owns the discipline's tool standards with the Leads",
+          "Runs the discipline independently; escalates only cross-line or strategic issues",
+          "Owns one discipline — its pods, leads and producers; balances capacity across projects",
+          "Accountable for the discipline's quality; owns standards & the QA/QC partnership; the final technical backstop",
+          "Fluent, client- and partner-capable; represents the discipline internally and externally",
+          "Manages the discipline's people — hiring, development, performance, careers; grows Leads and Seniors",
+          "Owns the discipline's utilization & capacity — staffs to demand, protects margin through the right mix and sound estimates"
+        ]
+      },
+      {
+        "label": "Senior Discipline Manager",
+        "level": "Discipline Manager",
+        "code": "L5",
+        "exp": [
+          "Recognized authority for the discipline's technical direction across the company",
+          "Drives the discipline's tooling & automation strategy; invests in capability",
+          "Owns discipline strategy; a trusted decision-maker at the line level",
+          "Owns a larger / multi-pod discipline at scale; shapes how the discipline grows",
+          "Drives continuous improvement; makes the discipline's quality a competitive strength",
+          "A senior voice with clients, partners and leadership",
+          "Builds the leadership bench (future Leads / DMs); a culture-carrier for the discipline",
+          "Owns the discipline's overall profitability & efficiency; sets the productivity bar"
+        ]
+      },
+      {
+        "label": "Director I",
+        "level": "Director",
+        "code": "L6",
+        "exp": [
+          "Sets technical direction and standards for the line; relies on DMs / Leads for depth (no longer personally hands-on)",
+          "Owns the line's tooling & technology strategy and investment; fluent in the business tools (dashboards, financials, capacity)",
+          "Runs the line independently against goals; escalates only company-level strategy / capital",
+          "Owns a whole service line or major function — multiple disciplines, its people and P&L-style performance",
+          "Accountable for the line's overall quality & delivery reputation; owns the standards system",
+          "Full professional fluency; owns top client & partner relationships; represents the line externally",
+          "Builds and leads the line's leadership team (DMs, PMs, Leads); owns culture, senior hiring and succession",
+          "Owns the line's P&L-style performance — utilization, margin, growth; sets targets and holds the line to them"
+        ]
+      },
+      {
+        "label": "Director II",
+        "level": "Director",
+        "code": "L6",
+        "exp": [
+          "Shapes the company's technical strategy and its reputation in the market",
+          "Drives technology / innovation strategy across the line; sponsors automation & new capability",
+          "A strategic leader; sets direction alongside the executive team",
+          "Owns a larger / multi-line domain or the most strategic function",
+          "Makes quality & delivery excellence a market differentiator for the line",
+          "A trusted executive-level voice with major clients, partners and the market",
+          "Develops future directors; a senior culture and talent leader for the company",
+          "Owns the line's financial strategy & sustainable profitability at scale"
+        ]
+      },
+      {
+        "label": "General Manager / COO",
+        "level": "Executive",
+        "code": "EXEC",
+        "exp": [
+          "Strong grasp of the whole delivery model; enough technical fluency to steer priorities and judge risk company-wide",
+          "Fluent in the business tools — company dashboards, financials, capacity, pipeline",
+          "Full authority over company operations; accountable to the CEO / ownership",
+          "Owns the whole company's operations — all three lines and the shared functions",
+          "Owns company-wide delivery quality & operational excellence",
+          "Executive fluency; represents the company with major clients, partners and the team",
+          "Leads the Directors and the leadership team; owns company culture and performance",
+          "Owns company-wide utilization, margin and efficiency; the operational guardian of profitability"
+        ]
+      },
+      {
+        "label": "CEO",
+        "level": "Executive",
+        "code": "EXEC",
+        "exp": [
+          "Sets the company's technical / market vision; not involved in delivery detail",
+          "Owns the technology & data strategy at company level; sponsors major investments",
+          "Ultimate decision authority; accountable to ownership and the market",
+          "Owns company strategy, capital, growth and the enterprise as a whole",
+          "Owns the company's reputation and standards as a brand promise",
+          "The company's voice — clients, partners, market and ownership",
+          "Sets vision and culture; builds the executive team; owns succession",
+          "Owns overall financial health, growth and capital allocation"
+        ]
+      }
+    ]
+  }
+}

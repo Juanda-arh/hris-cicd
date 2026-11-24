@@ -1,0 +1,106 @@
+/* Self-service: My Profile, edit personal information and employment certificates (Figma: Employee) */
+
+.self__title { margin: 0; font-size: 30px; font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; }
+.self__subtitle { margin: 8px 0 22px; font-size: 14px; font-weight: 300; color: var(--muted); }
+.self__empty { margin: 12px 0 0; font-size: 14px; font-weight: 300; color: var(--muted); }
+.self__muted { color: var(--muted); }
+.self__mono { font-family: var(--mono); font-size: 13px; }
+
+/* ---------- My Profile ---------- */
+.self__photo { width: 96px; height: 96px; object-fit: cover; }
+.self__name { margin: 0; font-size: 30px; font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; overflow-wrap: anywhere; }
+.self__badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
+.self__badge { padding: 2px 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: var(--ink); background: #fff; border: 1px solid var(--line); }
+.self__badge--ok { color: #1f5a37; background: #e3f1e7; border-color: #a9d2b5; }
+.self__section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
+.self__managed { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 300; color: var(--muted); }
+.self__history { margin-top: 32px; }
+.self__history-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
+.self__history-head h2 { margin: 0; font-size: 14px; font-weight: 500; }
+.self__history-head span { font-size: 12px; font-weight: 300; color: var(--muted); }
+.self__current { display: inline-block; padding: 1px 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; background: #f7e83a; border: 1px solid var(--ink); }
+
+/* ---------- Edit personal information ---------- */
+.self__error-banner { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; padding: 14px 16px; font-size: 14px; color: var(--error); background: var(--orange-soft); border: 1px solid #f4a58c; }
+.self__info { display: flex; align-items: flex-start; gap: 12px; margin: 24px 0 0; padding: 14px 16px; font-size: 13px; font-weight: 300; line-height: 1.5; background: #e6eef1; border: 1px solid #b9d3dc; }
+.self__info svg { flex: none; margin-top: 2px; }
+.self__info--blue { margin-top: 18px; }
+.self-edit__layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.self-edit__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line); }
+.self-edit__photo { display: flex; flex-direction: column; gap: 14px; padding: 22px; background: #fff; border: 1px solid var(--line); align-self: start; }
+.self-edit__photo-title { margin: 0; font-size: 14px; font-weight: 500; }
+.self-edit__photo-img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #d6d3cb; }
+.self-edit__photo-img--empty { display: grid; place-items: center; font-size: 40px; color: var(--muted); }
+.self-edit__photo-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.self-edit__photo-hint { margin: 0; font-size: 12px; font-weight: 300; color: var(--muted); }
+
+/* ---------- Employment certificates ---------- */
+.self-cert__head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 16px 24px; margin-bottom: 22px; }
+.self-cert__head .self__subtitle { margin-bottom: 0; }
+.self-cert__request { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.self-cert__request span { font-size: 12px; font-weight: 300; color: var(--muted); }
+.self-cert__steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 0 0 22px; padding: 0; list-style: none; }
+.self-cert__steps li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; font-size: 13px; background: #fff; border: 1px solid var(--line); }
+.self-cert__step-n { flex: none; display: grid; place-items: center; width: 28px; height: 28px; font-family: var(--mono); font-size: 12px; font-weight: 600; color: #fff; background: #000; }
+.self-cert__pending { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-bottom: 22px; padding: 18px 20px; background: #fbf9d8; border: 1px solid #e8e1a0; border-left: 4px solid #e2cf2a; }
+.self-cert__pending strong { display: block; font-size: 15px; font-weight: 500; }
+.self-cert__pending span { font-size: 13px; font-weight: 300; color: var(--muted); }
+.self-cert__title { margin: 0 0 12px; font-size: 14px; font-weight: 500; }
+.cert-status--pendiente { color: var(--ink); background: #f7e83a; border-color: var(--ink); }
+
+.self-cert__review { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.self-cert__details { margin: 0; padding: 4px 20px; background: #fff; border: 1px solid var(--field-line); }
+.self-cert__details div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.self-cert__details div:last-child { border-bottom: 0; }
+.self-cert__details dt { font-weight: 300; color: var(--muted); }
+.self-cert__details dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.self-cert__preview { margin: 0; display: none; }
+.self-cert__preview figcaption { margin-top: 8px; font-size: 12px; font-weight: 300; text-align: center; color: var(--muted); }
+.self-cert__sheet { position: relative; display: flex; flex-direction: column; gap: 8px; height: 260px; padding: 18px 16px; background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); overflow: hidden; }
+.self-cert__sheet strong { margin: 12px 0 4px; padding-bottom: 8px; font-size: 13px; font-weight: 500; border-bottom: 1px solid var(--ink); }
+.self-cert__sheet i { display: block; height: 3px; width: 88%; background: #d6d3cb; }
+.self-cert__sheet i.is-short { width: 55%; margin-top: 10px; }
+.self-cert__logo { color: #000; }
+.self-cert__stripes { position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--orange) 0 33%, #f2dd2e 33% 66%, #b9d3dc 66%); }
+.self-cert__stripes--foot { top: auto; bottom: 0; height: 16px; }
+.self-cert__footnote { margin: 16px 0 0; font-size: 13px; font-weight: 300; color: var(--muted); }
+
+@media (min-width: 640px) {
+  .self-cert__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .self-cert__review { grid-template-columns: minmax(0, 1fr) 200px; }
+  .self-cert__preview { display: block; }
+}
+@media (min-width: 1000px) {
+  .self__title, .self__name { font-size: 38px; }
+  .self__photo { width: 120px; height: 120px; }
+  .self-edit__layout { grid-template-columns: minmax(0, 1fr) 320px; gap: 48px; }
+}
+@media (max-width: 639px) {
+  .self-cert__request { align-items: flex-start; }
+}
+
+/* ---------- Account: change password ---------- */
+.self-password__layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.self-password__form { display: flex; flex-direction: column; gap: 20px; max-width: 560px; }
+.self-password__actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px; }
+.self-password__side { display: flex; flex-direction: column; gap: 0; }
+.self-password__side .self__info { margin-top: 16px; }
+.self-password__reqs { padding: 20px 22px; background: #fff; border: 1px solid var(--line); }
+.self-password__reqs-title { margin: 0 0 12px; font-size: 14px; font-weight: 500; }
+.self-password__reqs ul { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); }
+.self-password__reqs li { display: flex; align-items: center; gap: 10px; }
+.self-password__reqs li.is-met { color: var(--ink); }
+.self-password__check { flex: none; display: grid; place-items: center; width: 16px; height: 16px; font-size: 11px; line-height: 1; color: #fff; border: 1px solid var(--field-line); }
+.self-password__reqs li.is-met .self-password__check { background: #1f7a4d; border-color: #1f7a4d; }
+
+@media (min-width: 1000px) {
+  .self-password__layout { grid-template-columns: minmax(0, 1fr) 380px; gap: 48px; }
+}
+
+/* Edit personal information: sections and emergency contacts */
+.self-edit__grid { margin-top: 16px; }
+.self-edit__section { margin-top: 28px; }
+.self-edit__section > .data-rows { margin-top: 4px; }
+.self-edit__contact { margin: 14px 0 0; padding: 16px; min-width: 0; background: #fff; border: 1px solid var(--line); }
+.self-edit__contact-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; padding: 0; margin-bottom: 12px; font-size: 13px; font-weight: 500; float: left; }
+.self-edit__contact-head + * { clear: both; }

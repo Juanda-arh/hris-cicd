@@ -1,0 +1,9 @@
+# Normaliza finales de línea. Los scripts de shell y los YAML siempre en LF,
+# también al clonar en Windows (con CRLF bash falla con "$'\r': command not found").
+* text=auto
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sql text eol=lf
+Dockerfile text eol=lf
+.env.example text eol=lf

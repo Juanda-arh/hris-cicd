@@ -1,0 +1,167 @@
+/* Time off & leave (employee and leader). Mobile first: everything stacks; two columns from 900px. */
+
+.to-mono { font-family: var(--mono); }
+.to-eyebrow { margin: 0 0 10px; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.to-note { margin: 10px 0 0; font-size: 12px; font-weight: 300; line-height: 1.5; color: var(--muted); }
+.to-label { margin: 0 0 8px; font-size: 13px; }
+
+/* ---------- Form ---------- */
+.to-top { display: grid; gap: 28px; }
+.to-form .new-employee__subtitle { margin-bottom: 24px; }
+.to-types { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 6px; background: #fff; border: 1px solid var(--field-line); }
+.to-type { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 10px; font: inherit; font-size: 13px; font-weight: 500; color: var(--ink); background: none; border: 0; cursor: pointer; }
+.to-type:hover { background: #f3f1e8; }
+.to-type.is-active { color: #fff; background: #000; }
+.to-type:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+
+.to-dates { display: grid; gap: 0 16px; margin-top: 20px; }
+.to-form .form-field { margin-bottom: 18px; }
+.to-form .form-field label { display: block; margin-bottom: 8px; font-size: 13px; }
+.to-form input[type='date'], .to-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--field-line);
+  border-radius: 0;
+}
+.to-form input[type='date'] { font-family: var(--mono); font-size: 14px; }
+.to-form textarea { min-height: 96px; resize: vertical; }
+.to-form input:focus-visible, .to-form textarea:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+.to-form .has-error input, .to-form .has-error textarea, .to-form .has-error .to-drop { border-color: var(--error); }
+.to-preview { margin: -6px 0 18px; font-family: var(--mono); font-size: 12px; color: #3a3a3a; }
+
+.to-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 24px 16px;
+  font: inherit;
+  font-size: 13px;
+  color: #3a3a3a;
+  background: none;
+  border: 1.5px dashed #9c9888;
+  cursor: pointer;
+}
+.to-drop:hover, .to-drop.is-dragging { border-color: var(--ink); background: #fbfbe8; }
+.to-drop:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.to-drop strong { font-weight: 500; color: var(--ink); }
+.to-actions { display: flex; gap: 10px; margin-top: 6px; }
+/* The file inputs are opened from their buttons: never shown (a global input style would otherwise show them) */
+.time-off input[type='file'] { display: none !important; }
+
+/* ---------- Side: balance, flow, holidays ---------- */
+.to-side { display: grid; gap: 24px; align-content: start; }
+.to-card { padding: 20px 22px; background: #fff; border: 1px solid var(--field-line); }
+.to-balance__value { display: flex; align-items: baseline; gap: 10px; margin: 6px 0 14px; font-size: 15px; font-weight: 300; color: var(--muted); }
+.to-balance__number { font-size: 44px; font-weight: 400; line-height: 1; color: var(--ink); }
+.to-balance__bar { display: flex; height: 4px; background: #ecebe3; }
+.to-balance__used { background: #b9d5dd; }
+.to-balance__pending { background: #cfeec6; }
+.to-balance__foot { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; font-family: var(--mono); font-size: 11px; color: #3a3a3a; }
+
+.to-flow ol { margin: 0; padding: 0; list-style: none; }
+.to-flow li { position: relative; padding: 0 0 14px 24px; }
+.to-flow li::before { content: ''; position: absolute; top: 4px; left: 0; width: 10px; height: 10px; border: 1px solid var(--field-line); background: #fff; }
+.to-flow li.is-done::before { background: #000; border-color: #000; }
+.to-flow li.is-current::before { background: var(--orange); border-color: var(--orange); }
+.to-flow strong { display: block; font-size: 14px; font-weight: 400; }
+.to-flow li:not(.is-done):not(.is-current) strong { color: var(--muted); }
+.to-flow span { display: block; margin-top: 2px; font-size: 12px; font-weight: 300; color: var(--muted); }
+
+.btn--small { min-height: 34px; padding: 0 12px; font-size: 12px; }
+
+/* ---------- Sections ---------- */
+.to-section { margin-top: 40px; }
+.to-section__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding-bottom: 12px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+.to-section__head h2 { margin: 0; font-size: 15px; font-weight: 500; }
+.to-section__head span { font-size: 12px; font-weight: 300; color: var(--muted); }
+.to-calendar-row { display: grid; gap: 28px; }
+
+/* ---------- Calendar ---------- */
+.to-cal { width: 100%; max-width: 420px; }
+.to-cal__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 14px; }
+.to-cal__head button { width: 34px; height: 34px; font: inherit; font-size: 16px; color: var(--ink); background: #fff; border: 1px solid var(--field-line); cursor: pointer; }
+.to-cal__head button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.to-cal__grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+.to-cal__grid.is-loading { opacity: 0.5; }
+.to-cal__weekday { font-size: 10px; font-weight: 500; line-height: 1; text-align: center; color: var(--muted); padding-bottom: 4px; }
+.to-cal__day { display: grid; place-items: center; width: 100%; aspect-ratio: 1 / 1; font-family: var(--mono); font-size: 12px; background: #fff; border: 1px solid var(--line); }
+.to-cal__day.is-empty { background: none; border: 0; }
+.to-cal__day.is-off { color: #8a8a84; background: #dedcd3; border-color: #dedcd3; }
+.to-cal__day.is-holiday { background: #b9d5dd; border-color: #8fb4bf; }
+.to-cal__day.is-pending { background: #f7e83a; border-color: #000; font-weight: 500; }
+.to-cal__day.is-approved { background: #effee6; border-color: #9ca696; font-weight: 500; }
+.to-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 12px 0 0; padding: 0; list-style: none; font-size: 12px; font-weight: 300; }
+.to-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.to-swatch { width: 11px; height: 11px; border: 1px solid var(--line); }
+.to-swatch.is-approved { background: #effee6; border-color: #9ca696; }
+.to-swatch.is-pending { background: #f7e83a; border-color: #000; }
+.to-swatch.is-holiday { background: #b9d5dd; border-color: #8fb4bf; }
+.to-swatch.is-off { background: #dedcd3; border-color: #dedcd3; }
+
+.to-coming ul { margin: 0; padding: 0; list-style: none; }
+.to-coming li { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.to-coming li .to-mono { font-size: 13px; }
+.to-badge { padding: 2px 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid; }
+.to-badge--approved { background: #effee6; border-color: #9ca696; color: #1f5a37; }
+.to-badge--pending { background: #f7e83a; border-color: #000; }
+.to-badge--holiday { background: #b9d5dd; border-color: #000; }
+
+/* ---------- History ---------- */
+.to-status { display: inline-block; padding: 2px 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; border: 1px solid; }
+.to-status--pendiente { background: #f7e83a; border-color: #000; }
+.to-status--aprobado { background: #effee6; border-color: #9ca696; color: #1f5a37; }
+.to-status--rechazado { background: var(--orange-soft); border-color: #f4a58c; color: var(--error); }
+.to-status--cancelado { background: #dedcd3; border-color: #dedcd3; color: #4a4a44; }
+.to-btn-cancel { color: var(--error); background: var(--orange-soft); border-color: var(--orange); }
+.to-btn-cancel:hover:not(:disabled) { border-color: var(--error); }
+.to-dash { color: var(--muted); }
+
+.to-table { width: 100%; border-collapse: collapse; }
+.to-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.to-table tbody, .to-table td { display: block; }
+.to-table tr { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 14px 0; border-top: 1px solid var(--line); }
+/* Mobile card: period + status on the first line; type, days and date on the second */
+.to-table__period { flex: 1 1 calc(100% - 130px); font-size: 13px; }
+/* The status cell "dissolves" on mobile so its badge stays on the first line and its comment gets a line of its own */
+.to-table__status { display: contents !important; }
+.to-table__status .to-status { order: 0; }
+.to-table__type { flex-basis: auto; }
+.to-table__type, .to-table__days, .to-table__sent { order: 1; font-size: 12px; font-weight: 300; color: var(--muted); }
+.to-table__type::after, .to-table__days::after { content: '·'; margin-left: 10px; }
+.to-table__days::before { content: 'Days '; }
+.to-table__action { order: 3; flex-basis: 100%; display: flex !important; flex-wrap: wrap; gap: 8px; }
+.to-table__action .to-dash { display: none; }
+.to-table__comment { display: block; order: 2; flex-basis: 100%; margin-top: 2px; font-size: 12px; font-weight: 300; color: var(--muted); text-align: left; }
+.to-table__comment.is-alert { color: var(--error); }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .to-top { grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; }
+  .to-types { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .to-dates { grid-template-columns: 1fr 1fr; }
+  .to-calendar-row { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 48px; }
+
+  .to-table thead { position: static; display: table-header-group; width: auto; height: auto; overflow: visible; clip-path: none; }
+  .to-table tbody { display: table-row-group; }
+  .to-table tr { display: table-row; padding: 0; border-top: 0; border-bottom: 1px solid var(--line); }
+  .to-table td, .to-table th { display: table-cell !important; padding: 14px 12px; vertical-align: middle; }
+  .to-table th { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-align: left; text-transform: uppercase; color: var(--muted); background: #ecebe3; }
+  .to-table th.align-right, .to-table__action { text-align: right; }
+  .to-table__type, .to-table__days, .to-table__sent { font-size: 14px; color: var(--ink); }
+  .to-table__sent { color: var(--muted); }
+  .to-table__type::after, .to-table__days::after, .to-table__days::before { content: none; }
+  .to-table__status { text-align: left; }
+  .to-table__comment { max-width: 280px; margin-top: 4px; }
+  .to-table__action { justify-content: flex-end; }
+  .to-table__action .to-dash { display: inline; }
+}
+
+/* Note for the contract where weekday holidays are working days */
+.to-contract { margin: 0; padding: 12px 14px; background: #f3f1e8; border-left: 3px solid var(--ink); color: #3a3a3a; }

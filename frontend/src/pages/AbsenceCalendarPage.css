@@ -1,0 +1,175 @@
+/* Absence calendar: one row per person and one column per day of the month.
+   On narrow screens the grid scrolls sideways with the names fixed on the left. */
+
+.absence__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.absence__nav { display: inline-flex; gap: 4px; margin-top: 6px; }
+.absence__nav button { width: 36px; height: 36px; font: inherit; font-size: 18px; color: var(--ink); background: #fff; border: 1px solid var(--field-line); cursor: pointer; }
+.absence__nav button:hover { border-color: var(--ink); }
+.absence__nav button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+.cal-select select { min-height: 40px; padding: 0 12px; font-size: 13px; appearance: auto; }
+
+.absence__search { display: block; max-width: 360px; margin: 20px 0 16px; }
+.absence__search input { width: 100%; min-height: 40px; padding: 0 12px; font: inherit; font-size: 14px; font-weight: 300; background: #fff; border: 1px solid var(--field-line); border-radius: 0; }
+.absence__search input:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+
+/* ---------- Grid ---------- */
+.absence__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.absence__grid { width: 100%; min-width: calc(150px + var(--days) * 26px); border-collapse: separate; border-spacing: 3px 6px; table-layout: fixed; }
+.absence__grid th, .absence__grid td { padding: 0; }
+.absence__person {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 150px;
+  padding-right: 8px !important;
+  text-align: left;
+  vertical-align: middle;
+  background: var(--paper);
+}
+.absence__grid thead .absence__person,
+.absence__daynum { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.absence__daynum { text-align: center; letter-spacing: 0; font-family: var(--mono); font-weight: 400; }
+.absence__daynum.is-today { color: #fff; background: var(--ink); }
+.absence__person strong { display: block; font-size: 13px; font-weight: 400; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.absence__person span { display: block; font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.absence__cell > * { display: block; width: 100%; height: 24px; padding: 0; background: #fff; border: 1px solid var(--line); }
+.absence__cell button { cursor: pointer; }
+.absence__cell button:hover { outline: 2px solid var(--ink); outline-offset: 0; }
+.absence__cell button:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+.absence__cell.is-off > * { background: #e4e2d9; border-color: #e4e2d9; }
+.absence__cell.is-review > * { background: #f7e83a; border-color: #000; }
+.absence__cell.is-approved > * { background: #effee6; border-color: #9ca696; }
+.absence__cell.is-ongoing > * { background: #b9d5dd; border-color: #9cc0ca; }
+/* A weekend or holiday inside a request: grey, with a thin mark of the request */
+.absence__cell.is-event-off > * { background: #e4e2d9; border-color: #e4e2d9; box-shadow: inset 0 -3px 0 #c9c7bd; }
+
+/* ---------- Legend + summary ---------- */
+.absence__legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 18px 0 0; padding: 14px 0 0; list-style: none; font-size: 12px; font-weight: 300; border-top: 1px solid var(--line); }
+.absence__legend li { display: inline-flex; align-items: center; gap: 8px; }
+.absence__swatch { width: 12px; height: 12px; background: #fff; border: 1px solid var(--line); }
+.absence__swatch.is-review { background: #f7e83a; border-color: #000; }
+.absence__swatch.is-approved { background: #effee6; border-color: #9ca696; }
+.absence__swatch.is-ongoing { background: #b9d5dd; border-color: #9cc0ca; }
+.absence__swatch.is-off { background: #e4e2d9; border-color: #e4e2d9; }
+
+.absence__summary { display: grid; gap: 18px; margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.absence__summary dt { font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.absence__summary dd { margin: 6px 0 0; font-size: 22px; font-weight: 300; letter-spacing: -0.01em; }
+
+@media (min-width: 900px) {
+  .absence__summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .absence__person { width: 170px; }
+  .absence__grid { min-width: calc(170px + var(--days) * 20px); }
+}
+
+/* =========================================================
+   Calendar view: month grid with a note per person who is out (default view)
+   ========================================================= */
+.absence__tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 20px 0 16px; }
+.absence__tools .absence__search { flex: 1 1 260px; margin: 0; }
+.absence__views { display: inline-flex; padding: 3px; background: #fff; border: 1px solid var(--field-line); }
+.absence__view { min-height: 34px; padding: 0 14px; font: inherit; font-size: 13px; color: var(--ink); background: none; border: 0; cursor: pointer; }
+.absence__view.is-active { color: #fff; background: #000; }
+.absence__view:focus-visible { outline: 2px solid var(--orange); outline-offset: 1px; }
+.absence__hint { margin-right: 8px; font-weight: 400; color: var(--ink); }
+.absence__swatch.is-holiday { background: #f3f1e8; border: 1px dashed #8a8676; }
+
+.mcal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.mcal__weekday {
+  padding: 8px 4px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.mcal__weekday.is-sunday { color: var(--orange-dark); }
+.mcal__day {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+  min-width: 0;
+  min-height: 112px;
+  padding: 6px 5px 8px;
+  font: inherit;
+  text-align: left;
+  color: var(--ink);
+  background: #fff;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.mcal__day:hover { background: #fbfbe8; }
+.mcal__day:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; }
+.mcal__day.is-weekend { background: #f4f2ea; }
+.mcal__day.is-outside { cursor: default; background: var(--paper); }
+.mcal__day.is-outside .mcal__num { color: #c9c7bd; }
+.mcal__num { align-self: center; min-width: 26px; height: 26px; display: grid; place-items: center; font-family: var(--mono); font-size: 13px; }
+.mcal__day.is-sunday .mcal__num { color: var(--orange-dark); }
+.mcal__day.is-today .mcal__num { color: #fff; background: #000; }
+
+/* Notes: one per person; the colour is the state of the request */
+.mcal__chip {
+  display: block;
+  min-width: 0;
+  padding: 2px 5px;
+  overflow: hidden;
+  font-size: 11px;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid;
+  border-left-width: 3px;
+}
+.mcal__chip--review { background: #fbf6b8; border-color: #000; border-left-color: #f7d000; }
+.mcal__chip--approved { background: #effee6; border-color: #9ca696; border-left-color: #5e9b4c; }
+.mcal__chip--ongoing { background: #dcecf0; border-color: #8fb4bf; border-left-color: #4f8fa2; }
+/* Holidays: neutral and dashed, so they never look like an approved absence (green) */
+.mcal__chip--holiday { background: #f3f1e8; border-style: dashed; border-width: 1px; border-color: #8a8676; color: #4a4a44; }
+.mcal__more { font-size: 11px; font-weight: 500; color: var(--muted); padding-left: 2px; }
+
+/* ---------- Day window ---------- */
+.mcal-day { margin: 0; padding: 0; list-style: none; }
+.mcal-day li + li { margin-top: 8px; }
+.mcal-day__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  text-align: left;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+.mcal-day__item:hover { border-color: var(--ink); }
+.mcal-day__item:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.mcal-day__bar { flex: none; align-self: stretch; width: 4px; }
+.mcal-day__bar--review { background: #f7d000; }
+.mcal-day__bar--approved { background: #5e9b4c; }
+.mcal-day__bar--ongoing { background: #4f8fa2; }
+.mcal-day__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.mcal-day__text strong { font-size: 15px; font-weight: 400; }
+.mcal-day__text span { font-size: 12px; font-weight: 300; color: var(--muted); }
+.mcal-day__state { flex: none; padding: 2px 8px; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid; }
+.mcal-day__state--review { background: #f7e83a; border-color: #000; }
+.mcal-day__state--approved { background: #effee6; border-color: #9ca696; color: #1f5a37; }
+.mcal-day__state--ongoing { background: #b9d5dd; border-color: #8fb4bf; }
+
+/* ---------- Phone: shorter days, smaller notes (like a phone calendar) ---------- */
+@media (max-width: 599px) {
+  .mcal__weekday { padding: 6px 0; font-size: 9px; letter-spacing: 0.04em; }
+  .mcal__day { min-height: 84px; padding: 4px 2px 6px; gap: 2px; }
+  .mcal__num { min-width: 22px; height: 22px; font-size: 12px; }
+  .mcal__chip { padding: 1px 2px; font-size: 9px; border-left-width: 2px; }
+  .mcal__more { font-size: 9px; }
+}

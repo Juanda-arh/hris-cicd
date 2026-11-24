@@ -1,0 +1,27 @@
+/* Org chart: live tree from the API, or the HTML framework the admin imported */
+
+.org__head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px 24px; margin-bottom: 20px; }
+.org__title { margin: 0; font-size: 30px; font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; }
+.org__subtitle { margin: 8px 0 0; font-size: 13px; font-weight: 300; color: var(--muted); }
+.org__meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; font-size: 12px; font-weight: 300; color: var(--muted); }
+.org__badge { padding: 2px 10px; font-size: 11px; font-weight: 500; color: #1f5a37; background: #e3f1e7; border: 1px solid #a9d2b5; }
+.org__badge--imported { color: var(--ink); background: #f7e83a; border-color: var(--ink); }
+.org__restore {
+  min-height: 32px;
+  padding: 0;
+  font: inherit;
+  font-size: 12px;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.org__imported { font-size: 12px; text-align: right; color: var(--muted); }
+.org__notice { margin: 0 0 16px; padding: 12px 14px; font-size: 13px; background: #f3f1e8; border-left: 3px solid var(--ink); }
+.org__error { display: flex; gap: 8px; align-items: center; }
+
+@media (min-width: 900px) {
+  .org__title { font-size: 38px; }
+}

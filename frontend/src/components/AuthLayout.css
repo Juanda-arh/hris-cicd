@@ -1,0 +1,394 @@
+/* =========================================================
+   AuthLayout — shared by login, reset and change-password screens. Mobile first, desktop split layout from 900px.
+   Spacing follows the Figma rhythm (same on mobile and desktop):
+   label → field 12px · field → next label 30px · button 60px tall.
+   ========================================================= */
+
+.auth {
+  --ink: #111111;
+  --paper: #fefef4;
+  --orange: #fd3d03;
+  --orange-dark: #d93200;
+  --muted: #5f5f5f;
+  --line: #e4e4e4;
+  --font: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Logos: SVG used as a mask, so its colour is just `color` */
+.auth, .auth *, .auth *::before, .auth *::after { box-sizing: border-box; }
+
+.logo {
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: left center;
+  mask-position: left center;
+}
+
+/* ---------- Brand panel (black) ---------- */
+.auth__brand {
+  background: #000;
+  color: #fff;
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.auth__logo { height: 28px !important; }
+
+.auth__pitch { margin-top: 28px; }
+.auth__eyebrow {
+  margin: 0 0 20px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+.auth__headline {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+.auth__rule {
+  width: 56px;
+  margin: 24px 0 20px;
+  border: 0;
+  border-top: 1px solid #5a5a5a;
+}
+.auth__tagline {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.35;
+}
+
+.auth__brands {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  color: #a5a59f;
+}
+.auth__version { display: none; }
+
+/* ---------- Form panel (cream) ---------- */
+.auth__panel {
+  flex: 1;
+  display: flex;
+  padding: 36px 24px 48px;
+}
+.auth__form {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__label-top,
+.field label {
+  display: block;
+  margin: 0;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.auth__title {
+  margin: 17px 0 29px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+/* Underlined field: label, then a 32px-tall line */
+.field { margin-bottom: 30px; }
+.field label { margin-bottom: 12px; }
+.field input {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 0 0 8px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px solid var(--ink);
+  border-radius: 0;
+  outline: none;
+}
+.field input:focus-visible { border-bottom-color: var(--orange); }
+.field input[aria-invalid='true'] { border-bottom-color: var(--orange); }
+
+/* Password: grey line + "Show" toggle inside the same row */
+.field__row {
+  display: flex;
+  align-items: flex-start;
+  height: 32px;
+  border-bottom: 1.5px solid #b5b5b0;
+}
+.field__row:focus-within { border-bottom-color: var(--orange); }
+.field__row input { height: 100%; border-bottom: 0; }
+.field__toggle {
+  flex: none;
+  height: 100%;
+  padding: 0 0 8px 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.field__toggle:hover { color: var(--ink); }
+.field__toggle:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+.auth__error {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #b32a00;
+}
+
+.auth__options {
+  margin: 1px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.check {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #3a3a3a;
+  cursor: pointer;
+}
+.check input { position: absolute; opacity: 0; width: 0; height: 0; }
+.check__box {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  display: inline-grid;
+  place-items: center;
+}
+.check input:checked + .check__box { background: var(--ink); }
+.check input:checked + .check__box::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 1.5px solid var(--paper);
+  border-bottom: 1.5px solid var(--paper);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+.check input:focus-visible + .check__box { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+.auth__link,
+.auth__help a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.auth__link { font-size: 13px; font-weight: 500; white-space: nowrap; }
+
+.btn-primary {
+  height: 60px;
+  width: 100%;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--orange);
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-primary:hover:not(:disabled) { background: var(--orange-dark); }
+.btn-primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.btn-primary:disabled { background: #e9e4db; color: #9a9a9a; cursor: not-allowed; }
+
+.auth__help {
+  margin: 29px 0 0;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .auth { flex-direction: row; }
+
+  .auth__brand {
+    flex: 0 0 44.4%;          /* 640px of a 1440px frame */
+    max-width: 720px;
+    padding: 72px;
+    gap: 48px;                /* minimum air between logo, pitch and brands on short screens */
+  }
+  .auth__logo { height: 40px !important; }
+
+  /* The pitch block sits slightly below centre, as in the design */
+  .auth__pitch { margin: auto 0; padding-top: 56px; }
+  .auth__eyebrow { font-size: 11px; margin-bottom: 30px; }
+  .auth__headline { font-size: clamp(56px, 5vw, 72px); line-height: 1.04; }
+  .auth__rule { margin: 44px 0 30px; }
+  .auth__tagline { font-size: 14px; }
+
+  .auth__brands { margin-top: 0; flex-wrap: nowrap; gap: 32px; }
+  .auth__version {
+    display: block;
+    margin-left: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: #6b6b6b;
+  }
+
+  .auth__panel { align-items: center; padding: 48px 56px; }
+  .auth__title { font-size: 38px; }
+}
+
+/* =========================================================
+   Pieces used by the reset / change-password screens
+   ========================================================= */
+
+.auth__title--tight { margin-bottom: 12px; }
+.auth__subtitle {
+  margin: 0 0 28px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Link-looking button ("Sign out", "Back to sign in") */
+button.auth__link {
+  padding: 0;
+  font-family: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.auth__links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 24px; }
+
+/* Password requirements box */
+.reqs {
+  margin: 0 0 24px;
+  padding: 20px 22px 14px;
+  border: 1px solid var(--line);
+}
+.reqs__title {
+  margin: 0 0 16px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.reqs ul { margin: 0; padding: 0; list-style: none; }
+.reqs li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #3a3a3a;
+}
+.reqs__box {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  display: inline-grid;
+  place-items: center;
+  border: 1.5px solid var(--ink);
+}
+.reqs li.is-met .reqs__box { background: var(--ink); }
+.reqs li.is-met .reqs__box::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 1.5px solid var(--paper);
+  border-bottom: 1.5px solid var(--paper);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/* Verification code boxes.
+   Prefixed with .field so they win over the underlined-input rules (.field input). */
+.field__label {
+  display: block;
+  margin: 0 0 12px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.field .otp { display: flex; gap: 8px; }
+.field .otp__box {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+  height: 56px;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  background: transparent;
+  border: 1px solid #b5b5b0;
+  border-radius: 0;
+}
+.field .otp__box:focus { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.field .otp__box[aria-invalid='true'] { border-color: var(--orange); color: var(--orange); box-shadow: none; }
+
+/* Button with icon + small helper note under it */
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+.auth__note {
+  margin: 24px 0 0;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Reset step: bold email in the subtitle, resend row, notices */
+.auth__subtitle strong { font-weight: 500; color: var(--ink); }
+
+.resend { margin: 12px 0 0; font-size: 13px; font-weight: 300; color: var(--muted); }
+.resend button.auth__link { font-size: 13px; font-weight: 600; color: var(--ink); }
+.resend button.auth__link:disabled { color: var(--muted); text-decoration: none; cursor: default; }
+.resend__wait { margin-left: 8px; }
+
+.auth__notice {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  background: #f3f1e8;
+  border-left: 3px solid var(--ink);
+}

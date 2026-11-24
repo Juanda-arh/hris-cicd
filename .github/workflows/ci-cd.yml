@@ -1,0 +1,277 @@
+name: Pipeline CI/CD HRIS
+
+# ─── 1. TRIGGER ───────────────────────────────────────────────────────
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Evita dos ejecuciones simultáneas de la misma rama: la nueva cancela a la anterior.
+# En main no se cancela (un despliegue a producción a medias es peor que esperar en cola).
+concurrency:
+  group: ci-cd-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+permissions: # necesario para publicar y descargar la imagen en GHCR
+  contents: read
+  packages: write
+
+env:
+  NODE_VERSION: "20"
+  REGISTRY: ghcr.io
+
+jobs:
+  # ════════════════════════════════════════════════════════════════════
+  # JOB 1: BUILD & UNIT TESTS (la única puerta: si falla, nada se despliega)
+  # ════════════════════════════════════════════════════════════════════
+  build-and-test:
+    name: Build & Unit Tests
+    runs-on: ubuntu-latest # ─── 2. INFRAESTRUCTURA
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      # ─── 3. CHECKOUT
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      # ─── 2. RUNTIME
+      - name: Configurar Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      # ─── 4. DEPENDENCIAS Y VALIDACIÓN (equivale a la compilación)
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Validar código (ESLint)
+        run: npm run lint
+
+      # ─── 5. PRUEBAS UNITARIAS
+      - name: Ejecutar pruebas unitarias (PU-01 a PU-15)
+        run: npm run test:ci
+        env:
+          NODE_ENV: test
+          JWT_SECRET: ci-test-secret # valor de prueba, no es un secreto
+          JWT_EXPIRES_IN: 1h
+
+      - name: Tabla de cobertura por archivo
+        if: always()
+        run: cat coverage/coverage.txt 2>/dev/null || echo "No coverage report was generated"
+
+      - name: Resumen de pruebas y cobertura
+        if: always()
+        run: node scripts/ci-summary.js coverage >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Guardar reporte de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: backend/coverage/
+          retention-days: 30
+          if-no-files-found: warn
+
+  # ════════════════════════════════════════════════════════════════════
+  # JOB 2: DOCKER BUILD & PUSH (no corre en pull requests)
+  # ════════════════════════════════════════════════════════════════════
+  docker-build:
+    name: Docker Build & Push
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: build-and-test
+    if: github.event_name != 'pull_request'
+    outputs:
+      image: ${{ steps.vars.outputs.image }}
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      # GHCR exige nombres en minúsculas
+      - name: Definir nombre de imagen
+        id: vars
+        run: echo "image=${REGISTRY}/${GITHUB_REPOSITORY_OWNER,,}/hris-backend" >> "$GITHUB_OUTPUT"
+
+      - name: Configurar Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login a GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generar etiquetas de la imagen
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ steps.vars.outputs.image }}
+          tags: |
+            type=ref,event=branch
+            type=sha
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build & Push imagen
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ════════════════════════════════════════════════════════════════════
+  # JOB 3: DEPLOY AL RUNTIME
+  #  - Con el secreto SSH_HOST: despliegue en el servidor por SSH (pull, up -d, health, rollback).
+  #  - Sin SSH_HOST: ambiente efímero en el propio runner + prueba de humo con casos CN.
+  # ════════════════════════════════════════════════════════════════════
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: docker-build
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+    env:
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      HRIS_IMAGE: ${{ needs.docker-build.outputs.image }}
+    steps:
+      - name: Calcular etiqueta del commit y modo de despliegue
+        id: modo
+        run: |
+          echo "IMAGE_TAG=sha-${GITHUB_SHA::7}" >> "$GITHUB_ENV"
+          if [ -n "$SSH_HOST" ]; then
+            echo "modo=ssh" >> "$GITHUB_OUTPUT"
+            echo "Deploy mode: SSH to the server"
+          else
+            echo "modo=runner" >> "$GITHUB_OUTPUT"
+            echo "Deploy mode: ephemeral environment on the runner (secret SSH_HOST is not set)"
+          fi
+
+      # ─── 6a. DESPLIEGUE POR SSH (servidor real)
+      - name: Desplegar vía SSH
+        if: steps.modo.outputs.modo == 'ssh'
+        uses: appleboy/ssh-action@v1
+        env:
+          IMAGE_TAG: ${{ env.IMAGE_TAG }}
+          HRIS_IMAGE: ${{ env.HRIS_IMAGE }}
+          GHCR_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          envs: IMAGE_TAG,HRIS_IMAGE,GHCR_USER,GHCR_TOKEN
+          script: |
+            set -e
+            cd /opt/hris
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            export IMAGE_TAG HRIS_IMAGE
+            docker compose pull api
+            docker compose up -d --remove-orphans
+            if ! curl -fsS --retry 10 --retry-delay 3 --retry-all-errors http://localhost:3000/health; then
+              echo "Health check failed: rolling back to the previous image"
+              if [ -f .current_tag ]; then
+                IMAGE_TAG="$(cat .current_tag)" docker compose up -d api
+              fi
+              docker logout ghcr.io
+              exit 1
+            fi
+            if [ -f .current_tag ]; then cp .current_tag .previous_tag; fi
+            echo "$IMAGE_TAG" > .current_tag
+            docker image prune -f
+            docker logout ghcr.io
+
+      # ─── 6b. DESPLIEGUE EN EL RUNNER (sin servidor)
+      - name: Checkout de los archivos de despliegue
+        if: steps.modo.outputs.modo == 'runner'
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            deploy
+            db
+            .env.example
+          sparse-checkout-cone-mode: false
+
+      - name: Preparar ambiente efímero (compose, init.sql y .env con secretos aleatorios)
+        if: steps.modo.outputs.modo == 'runner'
+        run: |
+          DEPLOY_DIR="$RUNNER_TEMP/hris"
+          mkdir -p "$DEPLOY_DIR/db"
+          cp deploy/docker-compose.yml "$DEPLOY_DIR/docker-compose.yml"
+          cp deploy/smoke-test.sh "$DEPLOY_DIR/smoke-test.sh"
+          cp db/init.sql "$DEPLOY_DIR/db/init.sql"
+          DB_PASSWORD="$(openssl rand -hex 24)"
+          JWT_SECRET="$(openssl rand -hex 32)"
+          echo "::add-mask::$DB_PASSWORD"
+          echo "::add-mask::$JWT_SECRET"
+          sed -e "s/change-me-db-password/${DB_PASSWORD}/g" \
+              -e "s/change-me-jwt-secret/${JWT_SECRET}/" \
+              -e "s|^HRIS_IMAGE=.*|HRIS_IMAGE=${HRIS_IMAGE}|" \
+              .env.example > "$DEPLOY_DIR/.env"
+          if grep -qE '^[^#]*change-me' "$DEPLOY_DIR/.env"; then
+            echo "::error::.env still has placeholder values"
+            exit 1
+          fi
+          ls -la "$DEPLOY_DIR" "$DEPLOY_DIR/db"
+
+      - name: Login a GitHub Container Registry
+        if: steps.modo.outputs.modo == 'runner'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Desplegar con Docker Compose (${{ env.IMAGE_TAG }})
+        if: steps.modo.outputs.modo == 'runner'
+        working-directory: ${{ runner.temp }}/hris
+        run: |
+          docker compose pull
+          docker compose up -d --wait --wait-timeout 120
+          docker compose ps
+
+      - name: Prueba de humo (health + CN-01, 02, 03, 04, 07, 08, 12, 13, 19)
+        if: steps.modo.outputs.modo == 'runner'
+        working-directory: ${{ runner.temp }}/hris
+        run: |
+          JWT_SECRET="$(grep '^JWT_SECRET=' .env | cut -d= -f2-)" bash smoke-test.sh http://localhost:3000
+
+      - name: Logs de los contenedores (solo si falló)
+        if: failure() && steps.modo.outputs.modo == 'runner'
+        working-directory: ${{ runner.temp }}/hris
+        run: docker compose logs --no-color --tail=200
+
+      - name: Apagar el ambiente efímero
+        if: always() && steps.modo.outputs.modo == 'runner'
+        run: |
+          if [ -f "$RUNNER_TEMP/hris/docker-compose.yml" ]; then
+            cd "$RUNNER_TEMP/hris" && docker compose down -v
+          fi
+          docker logout ghcr.io || true
+
+      # ─── NOTIFICACIÓN POST-DEPLOY
+      - name: Resumen del despliegue
+        if: always()
+        run: |
+          if [ "${{ steps.modo.outputs.modo }}" = "ssh" ]; then
+            DESTINO="SSH server (/opt/hris)"
+          else
+            DESTINO="Ephemeral environment on the runner + smoke test (no SSH_HOST secret)"
+          fi
+          {
+            echo "### Deploy ${{ job.status }}"
+            echo "- Environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}"
+            echo "- Target: ${DESTINO}"
+            echo "- Branch: ${{ github.ref_name }}"
+            echo "- Commit: ${GITHUB_SHA::7}"
+            echo "- Image: ${HRIS_IMAGE}:${IMAGE_TAG}"
+          } >> "$GITHUB_STEP_SUMMARY"
