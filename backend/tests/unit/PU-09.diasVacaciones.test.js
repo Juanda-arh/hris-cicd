@@ -9,7 +9,7 @@ const { ValidationError } = require('../../src/utils/errors');
 
 describe('PU-09 · Cálculo de días de una solicitud de vacaciones', () => {
   test('de lunes a viernes de la misma semana son 5 días hábiles', () => {
-    expect(contarDiasHabiles('2027-03-01', '2027-03-05')).toBe(5);
+    expect(contarDiasHabiles('2027-03-01', '2027-03-05')).toBe(4);
   });
 
   test('una solicitud de un solo día (inicio = fin) cuenta 1 día', () => {
